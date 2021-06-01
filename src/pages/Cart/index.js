@@ -34,7 +34,7 @@ const Cart = () => {
                     <tbody>
                         {cart.length === 0 ? <p>No items in cart.</p> : null}
                         
-                        {cart.map((cartItem ) => (
+                        {cart.map((cartItem) => (
                             <tr key={cartItem.id}>
                                 <td >
                                     <div>
