@@ -83,7 +83,7 @@ const Cart = () => {
                             <h5>${total(cart)}</h5>
                         </div>
                         <br />
-                        <Button variant="success" type='button' className='w-100' onClick={() => history.push('/checkout')}><strong>CHECKOUT</strong></Button>
+                        <Button  type='button' className='w-100' onClick={() => history.push('/checkout')} style={{}}><strong>CHECKOUT</strong></Button>
 
                     </tbody>
 

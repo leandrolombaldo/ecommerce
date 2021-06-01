@@ -26,15 +26,13 @@ export const productPromo = [
         alt: 'Dress pink',
         img: produt1,
         name: 'Dress pink',
-        price: 499.00,
-        promo: 299.00
+        price: 299.00,
     },
     {
         id: 4,
         alt: 'foto2',
         img: catalogo2,
         name: 'Clothing',
-        price: 399.00,
-        promo: 199.00
+        price: 199.00,
     }
 ]
