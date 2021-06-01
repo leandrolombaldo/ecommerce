@@ -8,34 +8,16 @@ import Navtop from '../../components/Navbar';
 import Footer from '../../components/NavFooter';
 
 import useForm from '../../hooks/useForm';
-import api from '../../services/api';
 
 
 
 function Signup() {
 
-    const [{ values, loading }, handleChange] = useForm();
+    const [{ values, loading }, handleChange, handleSubmit] = useForm();
 
     const enviarContato = () => {
         // faça o que for preciso :)
         console.log(values);
-      };
-
-
-      const handleSignUp = async e => {
-        e.preventDefault();
-        const { ... } = this.state;
-        if (!email || !password || adress || adress2 || city || state || zip) {
-          this.setState({ error: "Preencha todos os dados para se cadastrar" });
-        } else {
-          try {
-            await api.post("/users", { email, password, adress, adress2, city, state, zip });
-            this.props.history.push("/signin");
-          } catch (err) {
-            console.log(err);
-            this.setState({ error: "Ocorreu um erro ao registrar sua conta. T.T" });
-          }
-        }
       };
 
     return (
@@ -43,7 +25,7 @@ function Signup() {
             <Navtop />
 
             <Container>
-                <Form onSubmit={handleSignUp(enviarContato)} >
+                <Form onSubmit={handleSubmit(enviarContato)} >
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Email</Form.Label>

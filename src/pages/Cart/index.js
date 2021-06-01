@@ -34,7 +34,7 @@ const Cart = () => {
                     <tbody>
                         {cart.length === 0 ? <p>No items in cart.</p> : null}
                         
-                        {cart.map((cartItem ) => (
+                        {cart.map((cartItem) => (
                             <tr key={cartItem.id}>
                                 <td >
                                     <div>
@@ -49,7 +49,7 @@ const Cart = () => {
                                 </td>
                                 <td >
                                     <AlignCenter>
-                                    <input type="text" value={cartItem.qty} onChange={(e) => changeQty(cartItem, parseInt(e.target.value))} />
+                                    <input  type="text"  value={cartItem.qty} onChange={(e) => changeQty(cartItem, parseInt(e.target.value))} />
                                     </AlignCenter>
                                 </td>
                                 <td>${(cartItem.price * cartItem.qty)}</td>
