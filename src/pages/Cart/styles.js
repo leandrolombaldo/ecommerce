@@ -29,11 +29,18 @@ export const H2 = styled.h2`
 
 export const CartTotal = styled.div`
     width: 25rem;
+    margin-top: 5rem;
     margin-left: 15px;
     float: right;
     background-color: #D3D3D3;
     border-radius: 3px;
     padding: 1rem;
+    margin-bottom: 0;
+
+    button {
+        border: none;
+        background: #deaa0c;
+    }
 
 `;
 

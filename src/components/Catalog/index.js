@@ -22,8 +22,7 @@ function Catalog({ data }) {
                                 <Card.Img variant="top" src={product.img} alt={product.alt} />
                                 <Card.Body>
                                     <Card.Title>{product.name}</Card.Title>
-                                    <Card.Text>Price: ${product.price} <strong> 8/.mo* {(product.promo / 8).toFixed(2)}</strong></Card.Text>
-                                    <Card.Text>Offer: ${product.promo} <strong> 8/.mo* {(product.promo / 8).toFixed(2)}</strong></Card.Text>
+                                    <Card.Text>Price: ${product.price} <strong> 8/.mo* {(product.price / 8).toFixed(2)}</strong></Card.Text>
                                     <Favority>
                                         <Card.Text className="star"><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></Card.Text>
                                         <Card.Text className="heart"><FaRegHeart /></Card.Text>
