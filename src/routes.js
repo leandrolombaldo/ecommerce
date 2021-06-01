@@ -34,7 +34,7 @@ const Routes = () => (
       <Route path="/cart" exact component={Cart} />
       <Route path="/signin" exact component={SignIn} />
       <Route path="/signup" exact component={SignUp} />
-      <PrivateRoute path="/checkout" exact component={CheckOut} />
+      <Route path="/checkout" exact component={CheckOut} />
     </Switch>
   </BrowserRouter>
 );
