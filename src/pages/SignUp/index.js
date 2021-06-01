@@ -20,8 +20,6 @@ function Signup() {
         console.log(values);
       };
 
-
-
     return (
         <>
             <Navtop />

@@ -49,7 +49,7 @@ const Cart = () => {
                                 </td>
                                 <td >
                                     <AlignCenter>
-                                    <input type="text" value={cartItem.qty} onChange={(e) => changeQty(cartItem, parseInt(e.target.value))} />
+                                    <input  type="text"  value={cartItem.qty} onChange={(e) => changeQty(cartItem, parseInt(e.target.value))} />
                                     </AlignCenter>
                                 </td>
                                 <td>${(cartItem.price * cartItem.qty)}</td>

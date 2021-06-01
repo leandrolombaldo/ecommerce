@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 
-
 export const ContainerMod = styled.div`
     display: flex;    
     .table{
@@ -35,7 +34,6 @@ export const CartTotal = styled.div`
     background-color: #D3D3D3;
     border-radius: 3px;
     padding: 1rem;
-    
 
 `;
 
