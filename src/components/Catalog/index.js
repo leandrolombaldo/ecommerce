@@ -1,4 +1,5 @@
 import React, { } from 'react';
+import {useHistory} from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
 import { FaRegStar, FaRegHeart } from "react-icons/fa";
 import { Catalogo, Favority } from './styles';
@@ -8,8 +9,9 @@ import { useCart } from '../../hooks/useCart';
 
 
 function Catalog({ data }) {
-    const { addToCart } = useCart();
+    const { addToCart, details } = useCart();
 
+    const history = useHistory();
     
 
     return (
@@ -29,6 +31,7 @@ function Catalog({ data }) {
                                     </Favority>
                                     <br />
                                     <Button type="button" variant="outline-primary" onClick={() => addToCart(product)}>Add to cart</Button>
+                                    <Button type="button" variant="outline-primary" onClick={() => history.push('/detailsproduct')}>Details Product</Button>
                                 </Card.Body>
                             </Card>
                         </Catalogo>
