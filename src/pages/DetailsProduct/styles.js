@@ -10,15 +10,21 @@ export const Div = styled.div`
     
     ol {
         display: flex;
+        
     }
-    li {
-        display: block;
-        padding: 0.5rem;
+    .select {
+        display: flex;
+        padding: 0.8rem;
         margin: 0.5rem;
         border: 1px solid #000;
         font-size: 12px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
     }
-   
+    .select:active{
+        border: 10px solid #000;
+    }
 `;
 export const Img = styled.div` 
 
@@ -65,6 +71,7 @@ export const Top = styled.div`
     width: 380px;
     display: flex;
     justify-content: space-between;
+    
 `;
 
 export const Mid = styled.div` 
@@ -186,5 +193,49 @@ export const ContainerFooter = styled.div`
             font-weight: 700;
           }
       }
+`;
+
+export const Colors = styled.div`
+      display: flex;
+      
+      .pink {
+          margin-left: 10px;
+          width: 25px;
+          height: 25px;
+          box-shadow: 0 0 0 2px white inset;
+          border: 1px solid #000;          
+          cursor: pointer;
+
+      }
+      .red {
+          background: red;
+          margin-left: 10px;
+          width: 25px;
+          height: 25px;
+          box-shadow: 0 0 0 2px white inset;
+          border: 1px solid #000;
+          cursor: pointer;
+      }
+`;
+
+export const Pink = styled.p`
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 0 0 0 2px white inset;
+    border: 1px solid #000;          
+    cursor: pointer;
+    background: pink;
+
+`;
+
+export const Purple = styled.p`
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 0 0 0 2px white inset;
+    border: 1px solid #000;          
+    cursor: pointer;
+    background: purple;
 
 `;
