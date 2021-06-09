@@ -36,3 +36,37 @@ export const productPromo = [
         price: 199.00,
     }
 ]
+
+
+const data = [
+    {
+        id: 10,
+        alt: 'Dress pink',
+        img: produt1,
+        name: 'Dress pink',
+        price: 299.00,
+    },
+    {
+        id: 11,
+        alt: 'foto2',
+        img: catalogo2,
+        name: 'Clothing',
+        price: 199.00,
+    },
+    {
+        id: 12,
+        alt: 'Dress pink',
+        img: produt1,
+        name: 'Dress pink',
+        price: 299.00,
+    },
+    {
+        id: 13,
+        alt: 'foto2',
+        img: catalogo2,
+        name: 'Clothing',
+        price: 199.00,
+    }
+]
+
+export default data;

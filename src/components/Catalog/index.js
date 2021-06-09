@@ -9,7 +9,9 @@ import { useCart } from '../../hooks/useCart';
 
 
 function Catalog({ data }) {
-    const { addToCart, details } = useCart();
+
+
+    const { addToCart } = useCart();
 
     const history = useHistory();
     
@@ -31,7 +33,7 @@ function Catalog({ data }) {
                                     </Favority>
                                     <br />
                                     <Button type="button" variant="outline-primary" onClick={() => addToCart(product)}>Add to cart</Button>
-                                    <Button type="button" variant="outline-primary" onClick={() => history.push('/detailsproduct')}>Details Product</Button>
+                                    <Button type="button" variant="outline-primary" onClick={() => history.push(`/detailsproduct/${product.id}`)}>Details Product</Button>
                                 </Card.Body>
                             </Card>
                         </Catalogo>

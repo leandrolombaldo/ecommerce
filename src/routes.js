@@ -10,6 +10,7 @@ import CheckOut from './pages/CheckOut';
 import DetailsProduct from './pages/DetailsProduct';
 
 import { isAuthenticated } from "./services/auth";
+  
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -19,7 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+        <Redirect to={{ pathname: "/signin", state: { from: props.location } }} />
       )
     }
   />
@@ -35,7 +36,7 @@ const Routes = () => (
       <Route path="/cart" exact component={Cart} />
       <Route path="/signin" exact component={SignIn} />
       <Route path="/signup" exact component={SignUp} />
-      <Route path="/detailsproduct" exact component={DetailsProduct} />
+      <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
       <PrivateRoute path="/checkout" exact component={CheckOut} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>

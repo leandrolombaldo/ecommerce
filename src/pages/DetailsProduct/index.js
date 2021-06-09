@@ -1,76 +1,64 @@
-import React from 'react';
-import { Link} from 'react-router-dom';
+import React, { } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Navtop from '../../components/Navbar';
 import Footer from '../../components/NavFooter';
-import Foto1 from '../../assets/catalogo1.jpeg';
 import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import Catalog from '../../components/Catalog';
 import { productData } from '../../components/Catalog/data';
-
-
+import data from './data';
 
 import { useCart } from '../../hooks/useCart';
 
 
-import { Container, Img, Div, Top, Mid, Button, Button1, Obs, Input, ButtonCep, NotCep, Info, BottomMid, ContainerMid, ContainerFooter, ButtonDes, Empty } from './styles';
+import { Container, Img, Div, Top, Mid, Button, Button1, Obs, Input, ButtonCep, NotCep, Info, BottomMid, ContainerMid, ContainerFooter, ButtonDes, Empty, Colors } from './styles';
+
+
 
 function DetailsProduct() {
-    
-    const { cart } = useCart();
+
+
+    const { id } = useParams()
+    const product = data.find(item => item.id === Number(id));
+
+
+
+    console.log(product)
+    const { addToCart } = useCart();
 
     return (
         <>
             <Navtop />
-            {cart.map((cartItem) => (
-            <Container className="container">                
-                <Img >
-                    <img src={Foto1} alt='' />
+            <Container className="container">
+                <Img key=''>
+                    <img src={product.img} alt='' />
                     <ButtonDes>Description</ButtonDes>
                     <Empty disabled></Empty>
                     <p>
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                        lorem ipsum dolor sit amet, consectetur
-                        lorem ipsum dolor sit amet
-                </p>
+                        {product.description}
+                    </p>
                 </Img>
                 <Div>
                     <Top>
-                        <h3>DRESS PINK</h3>
+                        <h3>{product.name}</h3>
                         <span><FaRegHeart /></span>
                     </Top>
                     <hr />
                     <p>0 de 5 <span><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></span>(0) <span>Rating</span></p>
                     <Mid>
-                        <h4>$499</h4>
-                        <p>8x 62,38 month</p>
+                        <h4>$ {product.price}</h4>
+                        <p>8x ${(product.price / 8).toFixed(2)} month</p>
                     </Mid>
-                    <p>COR | Pink</p>
-                    <p>TAMANHO</p>
+                    <p>COLORS | {product.color[0]}</p>
+                    <Colors>
+                        <p>{product.palet[0]}</p>
+                    </Colors>
+                    <p>SIZE</p>
                     <ol>
-                        <li>36</li>
-                        <li>37</li>
-                        <li>38</li>
-                        <li>39</li>
-                        <li>40</li>
+                        {product.size.map((value, index) => {
+                            return <a className="select" key={index}>{value}</a>
+                        })}
                     </ol>
-                    <Button type='button'>BUY</Button>
+                    <Button type='button' onClick={() => addToCart(product)}>BUY</Button>
                     <Button1 type='button'>BUY WITH <span>1 CLICK</span></Button1>
                     <Obs>Check if the product is available in the cart.</Obs>
                     <hr />
@@ -80,8 +68,7 @@ function DetailsProduct() {
                     <NotCep><Link style={{ color: '#000' }} to={{ pathname: 'http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm' }} target='_blank'>I don't know my ZIPCODE</Link></NotCep>
                     <Info>Prices, terms and types of delivery are valid only for this product under consultation.</Info>
                 </Div>
-            </Container >            
-            ))}
+            </Container >
             <ContainerMid className="container">
                 <BottomMid>COMPLETE LOOK</BottomMid>
                 <Catalog data={productData} />
