@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const Carroceu = styled.div`
-    display: flex;
-    max-width: 100%;
-
-
+export const Carouseu = styled.div`
+    img {
+      display: block;
+      width: 100%;
+      max-height: 50%;
+    }
 `;
