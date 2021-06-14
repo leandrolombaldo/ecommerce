@@ -1,11 +1,12 @@
-import React, { } from 'react';
+import React, {   } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Navtop from '../../components/Navbar';
 import Footer from '../../components/NavFooter';
-import { FaRegHeart, FaRegStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 import Catalog from '../../components/Catalog';
 import { productData } from '../../components/Catalog/data';
 import data from './data';
+import FavoriteWeb from '../../store/favorite';
 
 import { useCart } from '../../hooks/useCart';
 
@@ -16,7 +17,7 @@ import { Container, Img, Div, Top, Mid, Button, Button1, Obs, Input, ButtonCep, 
 
 function DetailsProduct() {
 
-
+    
     const { id } = useParams()
     const product = data.find(item => item.id === Number(id));
 
@@ -27,35 +28,46 @@ function DetailsProduct() {
 
     return (
         <>
+            {/* Navbar */}
             <Navtop />
             <Container className="container">
+                {/* Image of product */}
                 <Img key=''>
                     <img src={product.img} alt='' />
                     <ButtonDes>Description</ButtonDes>
                     <Empty disabled></Empty>
+                    {/* Description Product */}
                     <p>
                         {product.description}
                     </p>
                 </Img>
                 <Div>
+                    {/* Name product and favorite */}
                     <Top>
                         <h3>{product.name}</h3>
-                        <span><FaRegHeart /></span>
+                        <span>
+                       <FavoriteWeb />
+                        </span>
                     </Top>
                     <hr />
+                    {/* Rating product */}
                     <p>0 de 5 <span><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></span>(0) <span>Rating</span></p>
+                    {/* Price product */}
                     <Mid>
                         <h4>$ {product.price}</h4>
                         <p>8x ${(product.price / 8).toFixed(2)} month</p>
                     </Mid>
-                    <p>COLORS | {product.color[0]}</p>
+                    {/* Color product */}
+                    <p>COLOR | {product.color[0]}</p>
                     <Colors>
+                        {/* Palet color */}
                         <p>{product.palet[0]}</p>
                     </Colors>
+                    {/* Size product */}
                     <p>SIZE</p>
                     <ol>
                         {product.size.map((value, index) => {
-                            return <a className="select" key={index}>{value}</a>
+                            return <li className="select" key={index}>{value}</li>
                         })}
                     </ol>
                     <Button type='button' onClick={() => addToCart(product)}>BUY</Button>

@@ -32,12 +32,12 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/about" exact component={About} />
+      <PrivateRoute path="/about" exact component={About} />
       <Route path="/cart" exact component={Cart} />
       <Route path="/signin" exact component={SignIn} />
       <Route path="/signup" exact component={SignUp} />
       <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
-      <PrivateRoute path="/checkout" exact component={CheckOut} />
+      <Route path="/checkout" exact component={CheckOut} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </BrowserRouter>

@@ -1,8 +1,9 @@
 import React, { } from 'react';
 import {useHistory} from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
-import { FaRegStar, FaRegHeart } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 import { Catalogo, Favority } from './styles';
+import FavoriteWeb from '../../store/favorite';
 
 
 import { useCart } from '../../hooks/useCart';
@@ -29,7 +30,7 @@ function Catalog({ data }) {
                                     <Card.Text>Price: ${product.price} <strong> 8/.mo* {(product.price / 8).toFixed(2)}</strong></Card.Text>
                                     <Favority>
                                         <Card.Text className="star"><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></Card.Text>
-                                        <Card.Text className="heart"><FaRegHeart /></Card.Text>
+                                        <Card.Text className="heart"><FavoriteWeb /></Card.Text>
                                     </Favority>
                                     <br />
                                     <Button type="button" variant="outline-primary" onClick={() => addToCart(product)}>Add to cart</Button>
