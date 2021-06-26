@@ -1,5 +1,3 @@
- 
-
 import Routes from './routes';
 
 import Provider from './store'

@@ -1,11 +1,11 @@
-import React, {   } from 'react';
+import React, { } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Navtop from '../../components/Navbar';
 import Footer from '../../components/NavFooter';
 import { FaRegStar } from "react-icons/fa";
 import Catalog from '../../components/Catalog';
 import { productData } from '../../components/Catalog/data';
-import data from './data';
+import data from '../../components/Catalog/data';
 import FavoriteWeb from '../../store/favorite';
 
 import { useCart } from '../../hooks/useCart';
@@ -17,7 +17,8 @@ import { Container, Img, Div, Top, Mid, Button, Button1, Obs, Input, ButtonCep, 
 
 function DetailsProduct() {
 
-    
+   
+
     const { id } = useParams()
     const product = data.find(item => item.id === Number(id));
 
@@ -46,7 +47,7 @@ function DetailsProduct() {
                     <Top>
                         <h3>{product.name}</h3>
                         <span>
-                       <FavoriteWeb />
+                            <FavoriteWeb />
                         </span>
                     </Top>
                     <hr />
