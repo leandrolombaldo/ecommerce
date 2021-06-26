@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import CheckOut from './pages/CheckOut';
 import DetailsProduct from './pages/DetailsProduct';
+import Favorite from './pages/Favorite';
 
 import { isAuthenticated } from "./services/auth";
   
@@ -38,6 +39,7 @@ const Routes = () => (
       <Route path="/signup" exact component={SignUp} />
       <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
       <Route path="/checkout" exact component={CheckOut} />
+      <Route path="/favorite" exact component={Favorite} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </BrowserRouter>

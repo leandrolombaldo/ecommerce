@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 
-import data from '../pages/DetailsProduct/data';
+import data from '../components/Catalog/data';
+
 
 
 
@@ -11,7 +12,7 @@ function FavoriteWeb() {
 
     const { id } = useParams()
 
-    const product = data.find(item => item.id === Number(id));
+    const product = data.find(product => product.id === Number(id));
 
     const [favorites, setFavorites] = useState([]);
     const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
@@ -22,45 +23,46 @@ function FavoriteWeb() {
         }
     }, [])
 
+
     const addFav = (props) => {
-        let array = favorites
+        let arrayFav = favorites
         let addArray = true;
-        array.map((product, key) => {
-            if (product === props.id);
-            array.splice(key, 1);
-            addArray = false;
+        arrayFav.map((product, index) => {
+            if (product.id === props.id);
+            arrayFav.splice(index, 1);
         });
         if (addArray) {
-            array.push(props.id);
+            arrayFav.push(id);
         }
-        setFavorites([...array])
+        setFavorites([...arrayFav])
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
-        var storage = localStorage.getItem('favItem' + (props.id) || '0')
+        let storage = localStorage.getItem(('Id ' + (props.id)), JSON.stringify(props.product))
         if (storage == null) {
-            localStorage.setItem(('favItem' + (props.id)), JSON.stringify(props.product));
+            localStorage.setItem(('Id ' + (props.id)), JSON.stringify(props.product));
         }
         else {
-            localStorage.removeItem('favItem' + (props.id));
+            localStorage.removeItem('Id ' + (props.id));
         }
     }
 
 
+
     return (
         <span>
-        {favorites.includes(id) ? (
-            < FaHeart
-            onClick={() => addFav({ product, id})}
-            style={{color:'red'}}
-            />
-        ) : (
-            <FaRegHeart 
-            onClick={() => addFav({ product, id})}
-            />
-        )
-        }
+            {favorites.includes(id) ? (
+                <FaHeart
+                    onClick={() => addFav({ product, id })}
+                    style={{ color: 'red' }}
+                />
+            ) : (
+                <FaRegHeart
+                    onClick={() => addFav({ product, id })}
+                />
+            )
+            }
         </span>
-)
+    )
 }
 
 export default FavoriteWeb;

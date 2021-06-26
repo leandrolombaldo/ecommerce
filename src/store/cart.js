@@ -1,9 +1,7 @@
 import React ,{useState,createContext}from "react";
  
 const initialState = {
-   cart: [],
-  //  increment: (item)=> {},
-  //  decrement: (id)=> {}
+   cart: []
 }
 const CounterContext = createContext(initialState);
 
