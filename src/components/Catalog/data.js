@@ -1,4 +1,3 @@
-import catalog1 from '../../assets/cata1.jpg';
 import glasses from '../../assets/glasses.jpeg';
 import catalog3 from '../../assets/cata3.jpeg';
 import watch from '../../assets/watch.jpeg';

@@ -1,7 +1,7 @@
 import { useHistory, Link } from 'react-router-dom';
 
 import { NavCenter, NavHeader, Img } from './styles.js';
-import Burger from './burguer.js';
+import Burger from './burguer.jsx';
 
 import Logo from "../../assets/logo.svg";
 

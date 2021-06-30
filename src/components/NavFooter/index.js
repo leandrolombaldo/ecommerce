@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 import { Container, Iconcolor, Col, ColumnCenter, Button, Form, Ul, H6, Social } from './styles';
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { Icon } from '@material-ui/core';
 
 
 

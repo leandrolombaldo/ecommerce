@@ -1,11 +1,11 @@
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import { FaStar } from "react-icons/fa";
 import { Catal, Promo1, Promo2, Promo3, PrimaryCata, Container, Img, P, H5, H6, Star } from './styles.js';
 import data from "./data";
 
 
-import { useCart } from '../../hooks/useCart';
+// import { useCart } from '../../hooks/useCart';
 import Cata1 from '../../assets/cata1.jpg';
 import Cata2 from '../../assets/cata2.jpeg';
 import Cata3 from '../../assets/cata3.jpeg';
