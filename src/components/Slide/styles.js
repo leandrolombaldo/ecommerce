@@ -6,12 +6,6 @@ export const Div = styled.div`
     img {
       width: 100%;
     }
-    #right {
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-    }
 
     .promo {
       display: grid;
@@ -49,6 +43,14 @@ export const Div = styled.div`
         color: #fff;
       }
 
+    }
+    @media screen and (max-width: 768px) {
+      .promo {
+        margin-top: -12rem;
+        position: static;
+        
+      }
+  
     }
 `;
 

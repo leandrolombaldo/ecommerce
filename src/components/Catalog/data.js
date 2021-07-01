@@ -7,7 +7,7 @@ export const productData = [
     {
         id: 1,
         alt: 'Dress pink',
-        img: glasses,
+        image: glasses,
         name: 'Dress pink',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.
@@ -31,7 +31,7 @@ export const productData = [
     {
         id: 2,
         alt: 'foto2',
-        img: watch,
+        image: watch,
         name: 'Clothing',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.
@@ -53,7 +53,7 @@ export const productData = [
     {
         id: 3,
         alt: 'Dress pink',
-        img: catalog3,
+        image: catalog3,
         name: 'Dress pink',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.
@@ -72,7 +72,7 @@ export const productData = [
     {
         id: 4,
         alt: 'foto2',
-        img: catalog3,
+        image: catalog3,
         name: 'Clothing',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.
@@ -93,7 +93,7 @@ export const productData = [
     {
         id: 5,
         alt: 'Dress pink',
-        img: catalog3,
+        image: catalog3,
         name: 'Dress pink',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.
@@ -112,7 +112,7 @@ export const productData = [
     {
         id: 6,
         alt: 'foto2',
-        img: catalog3,
+        image: catalog3,
         name: 'Clothing',
         description: `
         Short curto em jeans com passantes no cós e bolsos com forro aparente. Com puídos e barra desfiada a peça é charmosa e possui um ar despojado. Ideal para todos os momentos o modelo pode compor os mais variados looks.

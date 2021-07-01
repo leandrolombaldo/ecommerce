@@ -1,52 +1,59 @@
-// import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom'
+ 
 
 import { FaStar } from "react-icons/fa";
-import { Catal, Promo1, Promo2, Promo3, PrimaryCata, Container, Img, P, H5, H6, Star } from './styles.js';
-import data from "./data";
+import { Container1, PromoItem, PrimaryCata, Container } from './styles.js';
 
 
 // import { useCart } from '../../hooks/useCart';
 import Cata1 from '../../assets/cata1.jpg';
-import Cata2 from '../../assets/cata2.jpeg';
-import Cata3 from '../../assets/cata3.jpeg';
+import data from './data';
+import api from '../../config/api';
 
 
 export function Catalog() {
+    // const { addToCart } = useCart(); 
+    const history = useHistory(); 
+    const [topSalesProducts, setTopSalesProducts] = useState([]);
+  
+    async function getTopSales() {
 
-    // const { addToCart } = useCart();
+        try {
+            const response = await api.get(`/Products/`);
 
-    // const history = useHistory();
+            const { data } = response;
 
-    console.log()
+            const topProducts = data.filter(product => product.sales_quantity < 30);
+
+            setTopSalesProducts(topProducts);
+        } catch (error) {
+            alert("Ocorreu um erro ao buscar os items");
+        }
+    }
+
+
+    useEffect(() => {
+        getTopSales()
+    }, []);
+
+   
+
     return (
-        <>
-            <Catal>
-                <Promo1 className="promo1">
-                    <img src={Cata1} alt='' />
-                    <div className="profile">
-                    <h3>BRUZA</h3>
-                    <h5>$299.55&nbsp;&nbsp; <s>$499.99</s></h5>
-                    <button className="buy">BUY NOW</button>
-                    </div>
-                </Promo1>
-                <Promo2 className="promo2">
-                    <img src={Cata2} alt='' />
-                    <div className="profile">
-                    <h3>DRESS</h3>
-                    <h5>$299.55&nbsp;&nbsp; <s>$499.99</s></h5>
-                    <button className="buy">BUY NOW</button>
-                    </div>
-                </Promo2>
-                <Promo3 className="promo3">
-                    <img src={Cata3} alt='' />
-                    <div className="profile">
-                    <h3>KIT</h3>
-                    <h5>$299.55&nbsp;&nbsp; <s>$499.99</s></h5>
-                    <button className="buy">BUY NOW</button>
-                    </div>
-                </Promo3>
-            </Catal>
-        </>
+     
+            <Container1>
+                {topSalesProducts.map(product => (
+                    <PromoItem key={product.id}>
+                        <img src={Cata1} alt={`${product.name}`} />
+                        <div className="profile">
+                            <h3>{product.name}</h3>
+                            <h5>R${product.price} <s>$499.99</s></h5>
+                            <button className="buy" type="button" onClick={() => history.push(`/detailsproduct/${product.id}`)}>BUY NOW</button>
+                        </div>
+                    </PromoItem>
+                ))}
+            </Container1>
+    
 
         // <Container>
         //     <div className="row">
@@ -75,17 +82,43 @@ export function Catalog() {
 }
 
 export function PrimaryCatalog() {
+    const [recommendedProducts, setRecommendedProducts] = useState([]);
+
+    async function getTopRecommended (){
+        const response = await api.get('/Products');
+
+        const products  = response.data;
+
+        const topSellers = products.filter(product => product.star > 4);
+
+        const recommendedProducts = products.map((product, index, productsList)=>{  
+            // console.log(productsList.length)
+
+            product.image = data[index < 6 ? index : productsList.length -5].image   
+            
+            // console.log(product);
+           return product
+        })
+
+        console.log(recommendedProducts)
+        
+        setRecommendedProducts(topSellers)
+    }
+
+    useEffect(()=> {
+        getTopRecommended()
+    },[])
 
     return (
-        <PrimaryCata >
-            {data.map((product) => {
+        <PrimaryCata > 
+            {recommendedProducts.map((product) => {
                 return (
                     <Container key={product.id}>
-                        <Img src={product.img} alt='' />
-                        <P>10% OFF</P>
-                        <Star><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /></Star>
-                        <H5>{product.name}</H5>
-                        <H6>${product.price}&nbsp;&nbsp; <s>$999.95</s></H6>
+                        <img src={product.image} alt={`${product.name}`} />
+                        <p>{product.discount}% OFF</p>
+                        <span><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /><FaStar color='#ffbf00' /></span>
+                        <h5>{product.name}</h5>
+                        <h6>${(product.price -((product.price * product.discount) /100)).toFixed([2])} &nbsp;&nbsp; <s>${product.price}</s></h6>
                     </Container>
                 )
             })}

@@ -1,13 +1,13 @@
 import { Div } from './styles';
 
-import foto4 from '../../assets/foto4.jpeg'
+import foto4 from '../../assets/foto4.png'
 
 
 function slide() {
     return (
         <>
         <Div>
-            <img id="right" src={foto4} alt="" />
+            <img src={foto4} alt="" />
             <div className="promo">
                 <h4>BEST COLLECTION</h4>
                 <h1>Limited time<br /> offer Hurry up!</h1>

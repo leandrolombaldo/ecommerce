@@ -68,6 +68,7 @@ export const Ul = styled.ul`
 
 export const Button = styled.button`
     color: #fff;
+    padding:0.5rem;
     background: #110102;
     padding: 0.75rem 2rem;
     justify-items: center;
@@ -78,7 +79,6 @@ export const Form = styled.form`
 
 
     input {
-        padding: 0.75rem 2rem;
-        padding-left: 0;
+        padding: 0.5rem; 
     }
 `;

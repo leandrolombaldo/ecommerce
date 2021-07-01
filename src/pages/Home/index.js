@@ -19,7 +19,7 @@ function Home() {
       <Slide />
       <Catalog />
       <TextTitle>
-        Best Seller Product
+        Best Seller<br />&nbsp; Product
       </TextTitle>
       <TextParag>
         Capture more customers with a great brand recall. Whether<br /> you need a catchy slogan for advertising.
