@@ -1,7 +1,6 @@
 import glasses from '../../assets/glasses.jpeg';
 import catalog3 from '../../assets/cata3.jpeg';
 import watch from '../../assets/watch.jpeg';
-import {Pink, Purple} from '../../pages/DetailsProduct/styles';
 
 export const productData = [
     {
@@ -15,9 +14,7 @@ export const productData = [
         color: [
             'Pink'
         ],
-        palet: [
-            <Pink></Pink>,
-        ],
+       
         size: [
             36,
             37,
@@ -40,9 +37,7 @@ export const productData = [
             'Purple',
             'Red'
         ],
-        palet: [
-            <Purple></Purple>,
-        ],
+       
         size: [
             36,
             37,
@@ -61,9 +56,7 @@ export const productData = [
         color: [
             'Pink'
         ],
-        palet: [
-            <Pink></Pink>,
-        ],
+       
         size: [
             40,
         ],
@@ -80,9 +73,7 @@ export const productData = [
         color: [
             'Purple'
         ],
-        palet: [
-            <Purple></Purple>,
-        ],
+    
         size: [
             38,
             39,
@@ -101,9 +92,7 @@ export const productData = [
         color: [
             'Pink'
         ],
-        palet: [
-            <Pink></Pink>,
-        ],
+      
         size: [
             40,
         ],
@@ -120,9 +109,7 @@ export const productData = [
         color: [
             'Purple'
         ],
-        palet: [
-            <Purple></Purple>,
-        ],
+       
         size: [
             38,
             39,
