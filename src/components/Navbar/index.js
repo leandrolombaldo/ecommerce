@@ -13,7 +13,7 @@ const Navtop = () => {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" style={{color:"#f1f1f1"}}>
         <Navbar.Brand>
           <img
             src={Logo}
@@ -23,7 +23,7 @@ const Navtop = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto" style={{fontFamily: "Raleway", fontSize: "20px"}}>
+          <Nav className="mr-auto" style={{fontFamily: "Raleway", fontSize: "20px",}}>
             <Nav.Link onClick={() => history.push("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => history.push("/about")}>About</Nav.Link>
             <Nav.Link href="#Em-Construção">Shop</Nav.Link>

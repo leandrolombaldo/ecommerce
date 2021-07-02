@@ -7,7 +7,6 @@ import { Container1, PromoItem, PrimaryCata, Container } from './styles.js';
 
 
 // import { useCart } from '../../hooks/useCart';
-import Cata1 from '../../assets/cata1.jpg';
 import data from './data';
 import api from '../../config/api';
 
@@ -44,7 +43,7 @@ export function Catalog() {
             <Container1>
                 {topSalesProducts.map(product => (
                     <PromoItem key={product.id}>
-                        <img src={Cata1} alt={`${product.name}`} />
+                        <img src={product.image} alt={`${product.name}`} />
                         <div className="profile">
                             <h3>{product.name}</h3>
                             <h5>R${product.price} <s>$499.99</s></h5>
@@ -55,31 +54,10 @@ export function Catalog() {
             </Container1>
     
 
-        // <Container>
-        //     <div className="row">
-        //         {data.map((product) => {
-        //             return (
-        //                 <Catalogo key={product.id}>
-        //                     <Card style={{ width: '15rem' }}>
-        //                         <Card.Img variant="top" src={product.img} alt={product.alt} />
-        //                         <Card.Body>
-        //                             <Card.Title>{product.name}</Card.Title>
-        //                             <Card.Text>Price: ${product.price} <strong> 8/.mo* {(product.price / 8).toFixed(2)}</strong></Card.Text>
-        //                             <Favority>
-        //                                 <Card.Text className="star"><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /><FaRegStar /></Card.Text>
-        //                             </Favority>
-        //                             <br />
-        //                             <Button type="button" variant="outline-primary" onClick={() => addToCart(product)}>Add to cart</Button>
-        //                             <Button type="button" variant="outline-primary" onClick={() => history.push(`/detailsproduct/${product.id}`)}>Details Product</Button>
-        //                         </Card.Body>
-        //                     </Card>
-        //                 </Catalogo>
-        //             )
-        //         })}
-        //     </div>
-        // </Container>
     );
 }
+
+
 
 export function PrimaryCatalog() {
     const [recommendedProducts, setRecommendedProducts] = useState([]);
@@ -100,7 +78,6 @@ export function PrimaryCatalog() {
            return product
         })
 
-        console.log(recommendedProducts)
         
         setRecommendedProducts(topSellers)
     }
