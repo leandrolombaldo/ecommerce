@@ -1,81 +1,113 @@
 // import React, { } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-import Navtop from '../../components/Navbar';
-import Footer from '../../components/NavFooter';
+import Navtop from "../../components/Navbar";
+import Footer from "../../components/NavFooter";
 
-import { Container, Login, Address } from './styles';
-import { RiNumber1 } from "react-icons/ri";
+import {
+  Container,
+  MyCart,
+  Address,
+  YourOrder,
+  DetailsProducts,
+  Total,
+} from "./styles";
+import {
+  FaRegCheckCircle,
+  FaPlusCircle, 
+  FaMinusCircle,
+} from "react-icons/fa";
 
-import { useCart } from '../../hooks/useCart';
-
-
-
+import { useCart } from "../../hooks/useCart";
 
 const Cart = () => {
-   //  const history = useHistory();
-   //  const {  cart, changeQty, total } = useCart();
+   const history = useHistory();
+  //  const {  cart, changeQty, total } = useCart();
 
+  
+  return (
+    <>
+      <Navtop />
+      <Container>
+        <h2>My Cart</h2>
+        <MyCart>
+        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
+          <div className="info">
+            <strong>Nome</strong>
+            <p>Size: M</p>
+            <p>Color: Blue</p>
+          </div>
+          <div className="quantity">
+            <button><FaPlusCircle color="#00ae7c" /></button>
+            <p>0</p>
+            <button><FaMinusCircle color="#00ae7c" /></button>
+          </div>
+          <div className="value">
+            <p>$299</p>
+            <p>x 1</p>
+          </div>
+        </MyCart>
+        <MyCart>
+        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
+          <div className="info">
+            <strong>Nome</strong>
+            <p>Size: M</p>
+            <p>Color: Blue</p>
+          </div>
+          <div className="quantity">
+            <button><FaPlusCircle color="#00ae7c" /></button>
+            <p>0</p>
+            <button><FaMinusCircle color="#00ae7c" /></button>
+          </div>
+          <div className="value">
+            <p>$299</p>
+            <p>x 1</p>
+          </div>
+        </MyCart>
+        <MyCart>
+        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
+          <div className="info">
+            <strong>Nome</strong>
+            <p>Size: M</p>
+            <p>Color: Blue</p>
+          </div>
+          <div className="quantity">
+            <button><FaPlusCircle color="#00ae7c" /></button>
+            <p>0</p>
+            <button><FaMinusCircle color="#00ae7c" /></button>
+          </div>
+          <div className="value">
+            <p>$299</p>
+            <p>x 1</p>
+          </div>
+        </MyCart>
+       
 
-    return (
-        <>
-        <Navtop />
-        <Container>
-            <h2 >Shopping Cart</h2>
-           <Login>
-              <span><RiNumber1 /></span>
-              <div>
-              <p>Login</p>
-              <strong>Nome</strong>
-              </div>
-              <div>
-                 <button>CHANGE</button>
-              </div>
-           </Login>
-           <Address>
-              <span>icon</span>
-              <p>Login</p>
-              <strong>Nome</strong>
-              <div>
-                 <button>CHANGE</button>
-              </div>
-           </Address>
+        <YourOrder>
+          <p>In Total</p>
+          <hr />
+                   
+          <DetailsProducts>
+            <div className="order">
+              <span>Order</span>
+              <strong>$299</strong>
+            </div>
+            <div className="delivery">
+              <span>Delivery</span>
+              <strong>Free</strong>
+            </div>
+            <div className="discount">
+              <span>Discount</span>
+              <strong>-$10</strong>
+            </div>
+          </DetailsProducts>
+          <hr />
+          <Total>
+            <button onClick={() => history.push('/checkout')}>To Checkout <span><FaRegCheckCircle /></span></button>
+          </Total>
+        </YourOrder>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* <ContainerMod>
+        {/* <ContainerMod>
                 <Table reponsive >
                     <thead>
                         <tr>
@@ -142,10 +174,10 @@ const Cart = () => {
 
                 </CartTotal>
             </ContainerMod> */}
-        </Container>
-        <Footer />
-        </>
-    )
-}
+      </Container>
+      <Footer />
+    </>
+  );
+};
 
 export default Cart;

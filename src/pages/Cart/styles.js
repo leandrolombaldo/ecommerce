@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 55%;
+  max-width: 60%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -17,42 +17,189 @@ export const Container = styled.div`
     margin-top: 5rem;
     margin-bottom: 2rem;
   }
-`;
 
-export const Login = styled.div`
-  grid-row-start: 2;
-  grid-row-end: 2;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid rgb(224, 224, 224);
-  
-  span {
-      display: flex;
-      margin-left: 8px;
-      margin-top: 8px;
-  }
-
-  p {
+  @media screen and (max-width: 768px) {
     display: block;
   }
+`;
 
-  button {
-      margin-top: 1.6rem;
-      margin-right: 16px;
-      justify-content: center;
-      cursor: pointer;
-      background: #f8f8f8;
-      border: transparent;
-      padding: 0.5rem 1rem 0.5rem;
-      font-size: 12px;
+export const MyCart = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 10px;
 
+  img {
+    width: 12vh;
+    margin: 16px 16px 16px;
+
+    border-radius: 10px;
+  }
+
+  .info { 
+
+    strong {
       
-     
+    }
 
+    p {
+      margin-top: 32px;
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+
+  .quantity {
+    display: block;
+    justify-content: center;
+
+    button {
+      background: transparent;
+      border: none;
+    }
+
+    p {
+      align-items: center;
+      margin-top: 12px;
+    }
+  }
+
+  .value {
+    display: flex;
+    padding: 0 16px 0;
+    
+
+    p {
+      margin: 0 16px 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    
+    margin-bottom: 16px;
+
+    .quantity {
+      display: flex;
+      padding: 8px;
+
+      button {
+        margin: 16px;
+      }
+    }
+
+    .value {
+      display: flex;
+      align-items: center;
+      padding: 0 51px 0;
+    }
   }
 `;
 
-export const Address = styled.div`
-  grid-row-start: 3;
-  grid-row-end: 3;
+export const YourOrder = styled.div`
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  grid-column-end: span 2;
+  grid-row-end: span 1;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+
+  p {
+    font-size: 32px;
+    font-family: "Raleway", sans-serif;
+
+    padding: 16px 16px 8px;
+  }
+`;
+
+export const ProductList = styled.div`
+  display: flex;
+  width: 80vw;
+  align-items: center;
+
+  img {
+    width: 64px;
+    border-radius: 10px;
+    margin-left: 16px;
+  }
+
+  div {
+    strong {
+      margin-left: 16px;
+    }
+
+    h5 {
+      margin-left: 16px;
+    }
+
+    span {
+      margin-left: 8px;
+      font-family: "Raleway", sans-serif;
+    }
+  }
+
+  .details {
+    display: flex;
+
+    p {
+      font-family: "Raleway", sans-serif;
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+`;
+
+export const DetailsProducts = styled.div`
+  span {
+    font-family: "Raleway", sans-serif;
+  }
+
+  strong {
+    margin-right: 32px;
+  }
+
+  .order {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 32px;
+  }
+
+  .delivery {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 32px;
+  }
+
+  .discount {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 8px;
+  }
+`;
+
+export const Total = styled.div`
+  button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    color: #fff;
+    background: #00ae7c;
+    font-family: "Raleway", sans-serif;
+
+    border: none;
+    border-radius: 0px 0px 10px 10px;
+
+    padding: 32px 16px 32px;
+  }
+
+  span {
+    display: flex;
+    margin-left: 8px;
+  }
 `;
