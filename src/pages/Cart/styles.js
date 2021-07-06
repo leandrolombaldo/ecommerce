@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const MyCart = styled.div`
   grid-column-start: 1;
   grid-column-end: 3;
-  display: flex;  
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f1f1f1;
@@ -39,15 +39,13 @@ export const MyCart = styled.div`
     border-radius: 10px;
   }
 
-  .info { 
-
+  .info {
     strong {
-      
     }
 
     p {
       margin-top: 32px;
-      font-family: 'Raleway', sans-serif;
+      font-family: "Raleway", sans-serif;
     }
   }
 
@@ -69,7 +67,6 @@ export const MyCart = styled.div`
   .value {
     display: flex;
     padding: 0 16px 0;
-    
 
     p {
       margin: 0 16px 0;
@@ -78,7 +75,7 @@ export const MyCart = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
-    
+
     margin-bottom: 16px;
 
     .quantity {
@@ -96,6 +93,16 @@ export const MyCart = styled.div`
       padding: 0 51px 0;
     }
   }
+
+  .empty {
+    
+  }
+`;
+
+
+export const CartEmpty = styled.div`
+  display: flex;
+  
 `;
 
 export const YourOrder = styled.div`

@@ -73,8 +73,6 @@ export const Address = styled.div`
   border-radius: 10px;
 
   .address {
-    display: block;
-    margin-left: -8vw;
 
     @media screen and (max-width: 768px) {
       margin-left: -8vw;

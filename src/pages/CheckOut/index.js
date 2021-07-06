@@ -1,8 +1,9 @@
-// import React, { } from 'react';
-// import { useHistory } from 'react-router-dom';
 
 import Navtop from "../../components/Navbar";
 import Footer from "../../components/NavFooter";
+
+import { useCart } from "../../hooks/useCart";
+import Cep from '../../components/Cep';
 
 import {
   Container,
@@ -15,19 +16,20 @@ import {
   DetailsProducts,
   Total,
 } from "./styles";
+
 import {
   FaUserCheck,
   FaCheck,
   FaRegAddressBook,
   FaCreditCard,
 } from "react-icons/fa";
+
 import { RiBankLine } from "react-icons/ri";
 import { Accordion, Card, Button, Form, Col } from "react-bootstrap";
 
 
 const Checkout = () => {
-  //  const history = useHistory();
-  //  const {  cart, changeQty, total } = useCart();
+   const {  cart, changeQty, total } = useCart();
 
   const Boleto = () => {
     alert("Boleto sent to email");
@@ -58,7 +60,7 @@ const Checkout = () => {
           </span>
           <div className="address">
             <p>SHIPPING ADDRESS</p>
-            <strong>Nome</strong>
+            <Cep />
           </div>
           <div>
             <button>CHANGE</button>
@@ -87,23 +89,23 @@ const Checkout = () => {
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
-                    <Form.Group as={Col} controlId="formGridState">
+                    <Form.Group as={Col} >
                       <Form.Label>Month</Form.Label>
                       <Form.Control />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridState">
+                    <Form.Group as={Col} >
                       <Form.Label>Year</Form.Label>
                       <Form.Control />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Group as={Col} >
                       <Form.Label>CVV*</Form.Label>
                       <Form.Control />
                     </Form.Group>
                   </Form.Row>
                   <Button variant="dark" type="submit">
-                    Pay $1523.00
+                    Pay ${total(cart).toFixed(2)}
                   </Button>
                   <p>
                     Your card details would be securely saved for faster
@@ -130,29 +132,32 @@ const Checkout = () => {
           </Accordion>
         </Payment>
 
+        
         <YourOrder>
           <p>Your Order</p>
           <hr />
+          {cart.map((cartItem) => (
           <ProductList>
             <img
-              src="https://images.unsplash.com/photo-1537141440647-35f2b2761904?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+              src={cartItem.image}
               alt=""
             />
             <div>
-              <strong>Nome</strong>
+              <strong>{cartItem.name}</strong>
               <div className="details">
                 <p>
                   Size: <span>M</span>
                 </p>
                 <p>
-                  Color: <span>Blue</span>
+                  Color: <span>{cartItem.color}</span>
                 </p>
               </div>
               <h5>
-                $299.00 <span>x 01</span>
+                ${cartItem.price} <span>x {cartItem.qty}</span>
               </h5>
             </div>
-          </ProductList><br />          
+          </ProductList>))}
+          <br />                    
           <hr />
           <DetailsProducts>
             <div className="delivery">
@@ -161,15 +166,15 @@ const Checkout = () => {
             </div>
             <div className="discount">
               <span>Discount</span>
-              <strong>-$10</strong>
+              <strong>$0</strong>
             </div>
           </DetailsProducts>
           <hr />
           <Total>
             <h5>Total</h5>
-            <h5>$299.00</h5>
+            <h5>${total(cart).toFixed(2)}</h5>
           </Total>
-        </YourOrder>
+        </YourOrder>        
       </Container>
       <Footer />
     </>

@@ -22,7 +22,7 @@ import { useCart } from "../../hooks/useCart";
 
 const Cart = () => {
    const history = useHistory();
-  //  const {  cart, changeQty, total } = useCart();
+   const {  cart, changeQty, total } = useCart();
 
   
   return (
@@ -30,58 +30,28 @@ const Cart = () => {
       <Navtop />
       <Container>
         <h2>My Cart</h2>
+        {cart.length === 0 ? <p>No items in cart.</p> : null}
+
+        {cart.map((cartItem) => (
         <MyCart>
-        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
-          <div className="info">
-            <strong>Nome</strong>
-            <p>Size: M</p>
-            <p>Color: Blue</p>
-          </div>
-          <div className="quantity">
-            <button><FaPlusCircle color="#00ae7c" /></button>
-            <p>0</p>
-            <button><FaMinusCircle color="#00ae7c" /></button>
-          </div>
-          <div className="value">
-            <p>$299</p>
-            <p>x 1</p>
-          </div>
+           
+            <img src={cartItem.image} alt="" />
+            <div className="info" key={cartItem.id}>
+              <strong>{cartItem.name}</strong>
+              <p>Size: M</p>
+              <p>Color: {cartItem.color}</p>
+            </div>
+            <div className="quantity">
+              <button><FaPlusCircle color="#00ae7c" /></button>
+              <p>{cartItem.qty}</p>
+              <button><FaMinusCircle color="#00ae7c" /></button>
+            </div>
+            <div className="value">
+              <p>${cartItem.price}</p>
+              <p>x {cartItem.qty}</p>
+            </div>       
         </MyCart>
-        <MyCart>
-        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
-          <div className="info">
-            <strong>Nome</strong>
-            <p>Size: M</p>
-            <p>Color: Blue</p>
-          </div>
-          <div className="quantity">
-            <button><FaPlusCircle color="#00ae7c" /></button>
-            <p>0</p>
-            <button><FaMinusCircle color="#00ae7c" /></button>
-          </div>
-          <div className="value">
-            <p>$299</p>
-            <p>x 1</p>
-          </div>
-        </MyCart>
-        <MyCart>
-        <img src="https://images.unsplash.com/photo-1621458091100-20eeb61ab5da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" />
-          <div className="info">
-            <strong>Nome</strong>
-            <p>Size: M</p>
-            <p>Color: Blue</p>
-          </div>
-          <div className="quantity">
-            <button><FaPlusCircle color="#00ae7c" /></button>
-            <p>0</p>
-            <button><FaMinusCircle color="#00ae7c" /></button>
-          </div>
-          <div className="value">
-            <p>$299</p>
-            <p>x 1</p>
-          </div>
-        </MyCart>
-       
+          ))}
 
         <YourOrder>
           <p>In Total</p>
@@ -90,7 +60,7 @@ const Cart = () => {
           <DetailsProducts>
             <div className="order">
               <span>Order</span>
-              <strong>$299</strong>
+              <strong>${total(cart).toFixed(2)}</strong>
             </div>
             <div className="delivery">
               <span>Delivery</span>
@@ -98,7 +68,7 @@ const Cart = () => {
             </div>
             <div className="discount">
               <span>Discount</span>
-              <strong>-$10</strong>
+              <strong>$0</strong>
             </div>
           </DetailsProducts>
           <hr />
