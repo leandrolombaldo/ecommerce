@@ -18,6 +18,15 @@ export const Container = styled.div`
     margin-bottom: 2rem;
   }
 
+  .cartEmpty {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
+
   @media screen and (max-width: 768px) {
     display: block;
   }
@@ -203,6 +212,14 @@ export const Total = styled.div`
     border-radius: 0px 0px 10px 10px;
 
     padding: 32px 16px 32px;
+
+    &:hover{
+      background: #088561;
+    }
+
+    &:disabled {
+      background: #d3d3d3;
+    }
   }
 
   span {

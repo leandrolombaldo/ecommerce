@@ -66,41 +66,13 @@ export const Address = styled.div`
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 3;
-  grid-row-end: 3;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid rgb(224, 224, 224);
-  border-radius: 10px;
+  grid-row-end: 4;
 
-  .address {
+  .colorNamesMethodPayment {
+    text-decoration: none;
+    color: #000;
+  }  
 
-    @media screen and (max-width: 768px) {
-      margin-left: -8vw;
-    }
-  }
-
-  span {
-    display: flex;
-    padding: 0.8rem 2rem 0.8rem;
-  }
-
-  p {
-    display: flex;
-    padding: 0.8rem 0rem 0rem;
-    align-self: flex-start;
-    font-family: "Raleway", sans-serif;
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    margin: 1.5rem 1.5rem 1rem;
-    cursor: pointer;
-    background: #f8f8f8;
-    border: transparent;
-    padding: 0.5rem 1rem 0.5rem;
-    font-size: 12px;
-  }
 `;
 
 export const H5 = styled.h5`

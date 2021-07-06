@@ -1,9 +1,8 @@
-
 import Navtop from "../../components/Navbar";
 import Footer from "../../components/NavFooter";
 
 import { useCart } from "../../hooks/useCart";
-import Cep from '../../components/Cep';
+import Cep from "../../components/Cep";
 
 import {
   Container,
@@ -27,9 +26,8 @@ import {
 import { RiBankLine } from "react-icons/ri";
 import { Accordion, Card, Button, Form, Col } from "react-bootstrap";
 
-
 const Checkout = () => {
-   const {  cart, changeQty, total } = useCart();
+  const { cart, changeQty, total } = useCart();
 
   const Boleto = () => {
     alert("Boleto sent to email");
@@ -55,16 +53,22 @@ const Checkout = () => {
           </div>
         </Login>
         <Address>
-          <span>
-            <FaRegAddressBook />
-          </span>
-          <div className="address">
-            <p>SHIPPING ADDRESS</p>
-            <Cep />
-          </div>
-          <div>
-            <button>CHANGE</button>
-          </div>
+        <Accordion defaultActiveKey="0">
+          <Card>
+          <Card.Header className="colorNamesMethodPayment">
+              <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                <FaRegAddressBook color="#000" size="30"/>
+              </Accordion.Toggle>
+              Address
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                <label>SHIPPING ADDRESS</label>
+                <Cep />
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          </Accordion>
         </Address>
 
         <H5>PAYMENT METHOD</H5>
@@ -89,17 +93,17 @@ const Checkout = () => {
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
-                    <Form.Group as={Col} >
+                    <Form.Group as={Col}>
                       <Form.Label>Month</Form.Label>
                       <Form.Control />
                     </Form.Group>
 
-                    <Form.Group as={Col} >
+                    <Form.Group as={Col}>
                       <Form.Label>Year</Form.Label>
                       <Form.Control />
                     </Form.Group>
 
-                    <Form.Group as={Col} >
+                    <Form.Group as={Col}>
                       <Form.Label>CVV*</Form.Label>
                       <Form.Control />
                     </Form.Group>
@@ -132,32 +136,29 @@ const Checkout = () => {
           </Accordion>
         </Payment>
 
-        
         <YourOrder>
           <p>Your Order</p>
           <hr />
           {cart.map((cartItem) => (
-          <ProductList>
-            <img
-              src={cartItem.image}
-              alt=""
-            />
-            <div>
-              <strong>{cartItem.name}</strong>
-              <div className="details">
-                <p>
-                  Size: <span>M</span>
-                </p>
-                <p>
-                  Color: <span>{cartItem.color}</span>
-                </p>
+            <ProductList>
+              <img src={cartItem.image} alt="" />
+              <div>
+                <strong>{cartItem.name}</strong>
+                <div className="details">
+                  <p>
+                    Size: <span>M</span>
+                  </p>
+                  <p>
+                    Color: <span>{cartItem.color}</span>
+                  </p>
+                </div>
+                <h5>
+                  ${cartItem.price} <span>x {cartItem.qty}</span>
+                </h5>
               </div>
-              <h5>
-                ${cartItem.price} <span>x {cartItem.qty}</span>
-              </h5>
-            </div>
-          </ProductList>))}
-          <br />                    
+            </ProductList>
+          ))}
+          <br />
           <hr />
           <DetailsProducts>
             <div className="delivery">
@@ -174,7 +175,7 @@ const Checkout = () => {
             <h5>Total</h5>
             <h5>${total(cart).toFixed(2)}</h5>
           </Total>
-        </YourOrder>        
+        </YourOrder>
       </Container>
       <Footer />
     </>
