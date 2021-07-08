@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Cart from './pages/Cart';
-import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import CheckOut from './pages/CheckOut';
 import DetailsProduct from './pages/DetailsProduct';
@@ -36,7 +35,6 @@ const Routes = () => (
       <PrivateRoute path="/about" exact component={About} />
       <Route path="/cart" exact component={Cart} />
       <Route path="/signin" exact component={SignIn} />
-      <Route path="/signup" exact component={SignUp} />
       <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
       <Route path="/checkout" exact component={CheckOut} />
       <Route path="/favorite" exact component={Favorite} />

@@ -1,85 +1,78 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const FormTotal = styled.div`
+  max-width: 45%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: minmax(5rem, auto);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
+  margin-top: 8rem;
 
 
-export const FormTotal = styled.form`
-    display: flex;
-    width: 100%;
-    padding: 5rem 20rem 5rem;
-    margin-top: 5rem;
-    
+  button {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    align-self: flex-start;
+    justify-self: center;
 
-    label {
-        font-family: sans-serif;
-    }
-
-    input {
-        border: none transparent;
-        border-radius: 4px;
-        border-color: #fff;
-        background: #DCDCDC;
-        outline: none;
-        transition: all .2s linear;
-        
-        :hover {
-            box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.5);
-            outline: none;
-        }
-    }
-    
-        
-    
-    @media screen and (max-width: 80rem) {
-        
-            display: inline;
-            width: 100%;
-
-            button {
-                float:center;
-            }
-        }
-    
-`;
-
-export const Button = styled.button`
-    background: #FFF0F5;
     border: none;
     border-radius: 4px;
-    padding: 1rem 2rem 0rem;
-    :hover {
-        border: 1px solid #D8BFD8;
+    padding: 16px 64px 16px;
+
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+
+    background: #00ae7c;
+    color: #fff;
+
+    &:hover {
+      background: #088561;
     }
-    @media screen and (max-width: 80rem) {
-        
-        width:100%;
-        text-align: center;
-        }
+  }
 `;
 
 export const Header = styled.div`
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  text-align: center;
+  align-self: flex-end;
+  font-size: 2rem;
 `;
 
-export const HeaderR = styled.div`
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
-`;
+export const Form = styled.div`
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  list-style: none;
+  text-align: center;
+  justify-self: center;
 
-export const FormR = styled.div`
-    margin-left: 15rem;
+  
+  label {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+  }
 
+  input {
+    display: list-item;
+    border: none transparent;
+    padding: 8px 64px 8px;
+    border-radius: 4px;
+    border-color: #fff;
+    background: #dcdcdc;
+    outline: none;
+    transition: all 0.2s linear;
 
-    @media screen and (max-width: 80rem) {
-        
-        display: inline;
-        width: 100%;
+    :hover {
+      box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.5);
+      outline: none;
     }
-   
-`;
-
-export const Div = styled.div`
-    border-left: 2px solid;
-    margin-left: 30%;
+  }
 `;

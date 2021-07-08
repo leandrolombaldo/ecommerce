@@ -18,7 +18,7 @@ import { useCart } from "../../hooks/useCart";
 
 const Cart = () => {
   const history = useHistory();
-  const { cart, changeQty, total } = useCart();
+  const { cart, total } = useCart();
 
   return (
     <>
@@ -40,14 +40,14 @@ const Cart = () => {
               <button>
                 <FaPlusCircle color="#00ae7c" />
               </button>
-              <p>{cartItem.qty}</p>
+              <p>{cartItem.quantity}</p>
               <button>
                 <FaMinusCircle color="#00ae7c" />
               </button>
             </div>
             <div className="value">
               <p>${cartItem.price}</p>
-              <p>x {cartItem.qty}</p>
+              <p>x {cartItem.quantity}</p>
             </div>
           </MyCart>
         ))}

@@ -19,10 +19,8 @@ export const Container = styled.div`
   }
 
   .cartEmpty {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 5;
+    display: flex;
+    margin-top: 6rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
   }

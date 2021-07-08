@@ -17,6 +17,11 @@ export const Container = styled.div`
     margin-top: 5rem;
     margin-bottom: 2rem;
   }
+
+  
+  @media screen and (max-width:768) {
+    
+  }
 `;
 
 export const Login = styled.div`
@@ -112,6 +117,7 @@ export const YourOrder = styled.div`
     font-size: 16px;
     padding: 16px 16px 8px;
   }
+
 `;
 
 export const ProductList = styled.div`

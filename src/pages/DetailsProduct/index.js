@@ -4,11 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Navtop from "../../components/Navbar";
 import Footer from "../../components/NavFooter";
 
-import { FaRegStar } from "react-icons/fa";
-
-// import Catalog from '../../components/Catalog';
-
-import FavoriteWeb from "../../store/favorite";
+import { FaRegStar, FaRegHeart, FaHeart } from "react-icons/fa";
 
 import { useCart } from "../../hooks/useCart";
 import api from "../../config/api";
@@ -35,6 +31,7 @@ import {
 } from "./styles";
 
 function DetailsProduct() {
+  
   const { id } = useParams();
   // const product = data.find((item) => item.id === Number(id));
 
@@ -47,6 +44,10 @@ function DetailsProduct() {
   }, [id]);
 
   const { addToCart } = useCart();
+
+  function handleFavorite() {
+    
+  }
 
   return (
     <>
@@ -62,7 +63,7 @@ function DetailsProduct() {
           <Top>
             <h3>{product.name}</h3>
             <span>
-              <FavoriteWeb />
+              <FaRegHeart onClick={handleFavorite}/>
             </span>
           </Top>
           <hr />
