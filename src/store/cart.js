@@ -1,4 +1,4 @@
-import React ,{useState,createContext}from "react";
+import {useState,createContext}from "react";
  
 const initialState = {
    cart: []
@@ -18,11 +18,11 @@ function CounterProvider({ children }) {
       ? [
         ...cart.map((item) =>
         item.id === product.id
-          ? {...item, qty: item.qty + 1}
+          ? {...item, quantity: item.quantity + 1}
           : item,
         ),
       ]
-      :[...prev, {...product, qty: 1}];
+      :[...prev, {...product, quantity: 1}];
     })
   }
 
@@ -32,19 +32,19 @@ function CounterProvider({ children }) {
     ]);
   }
 
-  function changeQty(product, qty) {
-    if(qty === 0) return removeFromCart(product);
+  function changeQuantity(product, quantity) {
+    if(quantity === 0) return removeFromCart(product);
 
     setCart((prev) => [
       ...prev.map((item) =>
-      item.id === product.id ? {...item, qty } : item,
+      item.id === product.id ? {...item, quantity } : item,
       ),
     ]);
   }
   
   function total(cart) {
     return cart.reduce(function (acc, item) {
-      acc += item.price * item.qty;
+      acc += item.price * item.quantity;
       return acc;
     }, 0);
   }
@@ -52,7 +52,7 @@ function CounterProvider({ children }) {
   
 
   return (
-    <CounterContext.Provider value={{ cart, addToCart, removeFromCart, changeQty, total }}>
+  <CounterContext.Provider value={{ cart, addToCart, removeFromCart, changeQuantity, total }}>
       {children}
     </CounterContext.Provider>
   );

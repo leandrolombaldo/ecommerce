@@ -17,6 +17,9 @@ export const Container = styled.div`
     margin-top: 5rem;
     margin-bottom: 2rem;
   }
+
+  @media screen and (max-width: 768) {
+  }
 `;
 
 export const Login = styled.div`
@@ -71,8 +74,7 @@ export const Address = styled.div`
   .colorNamesMethodPayment {
     text-decoration: none;
     color: #000;
-  }  
-
+  }
 `;
 
 export const H5 = styled.h5`

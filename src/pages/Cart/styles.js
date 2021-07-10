@@ -9,7 +9,8 @@ export const Container = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 
   h2 {
     grid-row-start: 1;
@@ -19,10 +20,8 @@ export const Container = styled.div`
   }
 
   .cartEmpty {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 5;
+    display: flex;
+    margin-top: 6rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
   }

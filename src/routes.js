@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Cart from './pages/Cart';
-import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 import CheckOut from './pages/CheckOut';
 import DetailsProduct from './pages/DetailsProduct';
 import Favorite from './pages/Favorite';
@@ -33,13 +33,13 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={Home} />
-      <PrivateRoute path="/about" exact component={About} />
+      <Route path="/about" exact component={About} />
       <Route path="/cart" exact component={Cart} />
       <Route path="/signin" exact component={SignIn} />
-      <Route path="/signup" exact component={SignUp} />
+      <Route path="/signUp" exact component={SignUp} />
       <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
-      <Route path="/checkout" exact component={CheckOut} />
-      <Route path="/favorite" exact component={Favorite} />
+      <PrivateRoute path="/checkout" exact component={CheckOut} />
+      <PrivateRoute path="/favorite" exact component={Favorite} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </BrowserRouter>
