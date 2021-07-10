@@ -18,9 +18,7 @@ export const Container = styled.div`
     margin-bottom: 2rem;
   }
 
-  
-  @media screen and (max-width:768) {
-    
+  @media screen and (max-width: 768) {
   }
 `;
 
@@ -76,8 +74,7 @@ export const Address = styled.div`
   .colorNamesMethodPayment {
     text-decoration: none;
     color: #000;
-  }  
-
+  }
 `;
 
 export const H5 = styled.h5`
@@ -117,7 +114,6 @@ export const YourOrder = styled.div`
     font-size: 16px;
     padding: 16px 16px 8px;
   }
-
 `;
 
 export const ProductList = styled.div`

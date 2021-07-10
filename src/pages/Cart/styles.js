@@ -9,7 +9,8 @@ export const Container = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 
   h2 {
     grid-row-start: 1;

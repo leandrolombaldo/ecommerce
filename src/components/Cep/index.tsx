@@ -57,7 +57,7 @@ function Cep() {
           onChange={({ target }) => {
             setShippingAddress({
               ...shippingAddress,
-              logradouro: target.value,
+              logradouro: target.value
             });
           }}
           maxLength={15}
