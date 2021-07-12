@@ -1,56 +1,56 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Div = styled.div`
-      display: grid;
+import Banner from "../../assets/banner.jpg";
 
-    img {
+export const Container = styled.div`
       width: 100%;
-    }
+      height: 720px;
 
-    .promo {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 5vw 16vw;
-      
-      position: absolute;
-      margin: 20% 20%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+         
+      background-image: ${`url(${Banner})`};
+
+      section {
+        margin-right: 128px;
+      }
 
       h4 {        
-        grid-row-start: 1;
-        grid-row-end: 2;
+     
         font-family: sans-serif;
         font-size: 1.5vw;
       }
 
       h1 {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
+       
         font-size: 5vw;
-        margin-top: 3%;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Raleway', sans-serif;
       }
 
       button {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
-        padding: 2vw;
+        
+        padding: 36px 64px 36px;
         background: orange;
         border: 1px solid #ececec;
         color: #fff;
       }
 
-    }
-    @media screen and (max-width: 768px) {
-      .promo {
-        margin-top: -12rem;
-        position: static;
-        
+      @media screen and (max-width: 768px) {
+          height: 30vh;
+
+          h4 {
+            font-size: 16px;
+          }
+
+          h1 {
+            font-size: 36px;
+          }
+
+          button {
+            padding: 16px 32px 16px;
+          }
       }
   
-    }
+ 
 `;
-
