@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 
 import { Navbar, Nav } from "react-bootstrap";
 import { FaShoppingBag, FaRegUser } from "react-icons/fa";
+import { Container } from "./styles";
 
 import Logo from "../../assets/logo.svg";
 import { useCart } from '../../hooks/useCart';
@@ -12,8 +13,8 @@ const Navtop = () => {
   const { cart } = useCart();
 
   return (
-    <>
-      <Navbar bg="light" expand="lg" style={{color:"#f1f1f1"}}>
+    <Container>
+      <Navbar  className="navbar" expand="lg" >
         <Navbar.Brand>
           <img
             src={Logo}
@@ -40,7 +41,7 @@ const Navtop = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
+    </Container>
   );
 };
 
