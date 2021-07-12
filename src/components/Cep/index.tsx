@@ -1,38 +1,27 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useState, FormEvent } from "react";
 
 import apiCep from "../../config/apiCep";
 
 import { Form, Inputs } from "./styles";
 
-
-
-interface Address {
-  
-}
-
 function Cep() {
   const [inputValue, setInputValue] = useState("");
+  const [shippingAddress, setShippingAddress] = useState({
+    cep: "",
+    logradouro: "",
+    complemento: "",
+    bairro: "",
+    localidade: "",
+    uf: "",
+    gia: "",
+  });
 
-  const [shippingAddress, setShippingAddress] = useState(() => {
-    const storagedAddress = localStorage.getItem(
-      '@@AddressCarolinaStore:address',
-      );
-
-      if (storagedAddress) {
-          return JSON.parse(storagedAddress);
-      }
-      return[];
-});
-
-  
-
-  //Salvando no localStorage
-  useEffect(() => {
+  const handleSaveAddress = () => {
     localStorage.setItem(
-      "@AddressCarolinaStore:address",
+      "@shippingAddress",
       JSON.stringify(shippingAddress)
     );
-  }, [shippingAddress]);
+  };
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -65,12 +54,13 @@ function Cep() {
           name="logradouro"
           placeholder="Address"
           value={shippingAddress.logradouro}
-          onChange={(e) => {
+          onChange={({ target }) => {
             setShippingAddress({
               ...shippingAddress,
-              logradouro: e.target.value,
+              logradouro: target.value
             });
           }}
+          maxLength={15}
         />
 
         <input
@@ -80,9 +70,10 @@ function Cep() {
           name="numero"
           placeholder="0000"
           value={shippingAddress.gia}
-          onChange={(e) => {
-            setShippingAddress({ ...shippingAddress, gia: e.target.value });
+          onChange={({ target }) => {
+            setShippingAddress({ ...shippingAddress, gia: target.value });
           }}
+          maxLength={15}
         />
 
         <input
@@ -92,12 +83,13 @@ function Cep() {
           placeholder="Apto 000"
           name="complemento"
           value={shippingAddress.complemento}
-          onChange={(e) => {
+          onChange={({ target }) => {
             setShippingAddress({
               ...shippingAddress,
-              complemento: e.target.value,
+              complemento: target.value,
             });
           }}
+          maxLength={15}
         />
 
         <input
@@ -107,12 +99,13 @@ function Cep() {
           placeholder="City"
           name="complemento"
           value={shippingAddress.localidade}
-          onChange={(e) => {
+          onChange={({ target }) => {
             setShippingAddress({
               ...shippingAddress,
-              localidade: e.target.value,
+              localidade: target.value,
             });
           }}
+          maxLength={15}
         />
 
         <input
@@ -122,12 +115,15 @@ function Cep() {
           placeholder="state"
           name="complemento"
           value={shippingAddress.uf}
-          onChange={(e) => {
-            setShippingAddress({ ...shippingAddress, uf: e.target.value });
+          onChange={({ target }) => {
+            setShippingAddress({ ...shippingAddress, uf: target.value });
           }}
+          maxLength={15}
         />
 
-        <button type="submit">Apply Address</button>
+        <button type="submit" onClick={handleSaveAddress}>
+          Apply Address
+        </button>
       </Inputs>
     </>
   );

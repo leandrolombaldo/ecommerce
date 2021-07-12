@@ -27,7 +27,7 @@ import { RiBankLine } from "react-icons/ri";
 import { Accordion, Card, Button, Form, Col } from "react-bootstrap";
 
 const Checkout = () => {
-  const { cart, changeQty, total } = useCart();
+  const { cart,  total } = useCart();
 
   const Boleto = () => {
     alert("Boleto sent to email");

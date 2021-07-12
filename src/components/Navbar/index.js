@@ -33,7 +33,7 @@ const Navtop = () => {
           <Nav className="justify-content-end" style={{fontFamily: "Raleway", fontSize: "20px"}}>
             <Nav.Link onClick={() => history.push("/cart")}>
               <FaShoppingBag color="#000" />
-              {cart.reduce((acc, item) => acc + item.qty, 0)}
+              {cart.reduce((acc, item) => acc + item.quantity, 0)}
             </Nav.Link>
             <Nav.Link onClick={() => history.push("/signin")}>
               <FaRegUser color="#000" />

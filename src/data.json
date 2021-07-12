@@ -1,0 +1,143 @@
+[
+   {
+    "createdAt": "2021-07-07T01:31:49.897Z",
+    "name": "Rustic Concrete Chair",
+    "description": "The Football Is Good For Training And Recreational Purposes",
+    "sizes": [
+     "P",
+     "M",
+     "G"
+    ],
+    "price": 480,
+    "sales_quantity": 50,
+    "image": "https://images.unsplash.com/photo-1605272698572-1ac626c702fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "isFavorite": false,
+    "discount": 15,
+    "star": 5,
+    "id": 1
+   },
+   {
+    "createdAt": "2021-07-07T08:02:43.714Z",
+    "name": "Incredible Metal Pizza",
+    "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "sizes": [
+     "P",
+     "M",
+     "G"
+    ],
+    "color": "Black",
+    "price": "952.00",
+    "sales_quantity": "20",
+    "image": "https://images.unsplash.com/photo-1583002083815-8c6305bd56a4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80",
+    "isFavorite": false,
+    "id": "2"
+   },
+   {
+    "createdAt": "2021-07-07T05:36:28.670Z",
+    "name": "Generic Wooden Mouse",
+    "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "sizes": [],
+    "price": "435.00",
+    "sales_quantity": 89,
+    "image": "https://images.unsplash.com/photo-1537141689536-747b4a9dbc45?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80",
+    "isFavorite": false,
+    "discount": "15",
+    "star": 5,
+    "id": "3"
+   },
+   {
+    "createdAt": "2021-07-07T13:21:52.434Z",
+    "name": "Gorgeous Soft Chips",
+    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "sizes": [
+     "P",
+     "M",
+     "G"
+    ],
+    "color": "Red",
+    "price": "797.00",
+    "sales_quantity": "20",
+    "image": "https://images.unsplash.com/photo-1572804013427-4d7ca7268217?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80",
+    "isFavorite": false,
+    "id": "4"
+   },
+   {
+    "createdAt": "2021-07-07T12:39:24.836Z",
+    "name": "Practical Rubber Hat",
+    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "sizes": [],
+    "price": "862.00",
+    "sales_quantity": 82,
+    "image": "https://images.unsplash.com/photo-1624248214059-da24ac46c24a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "isFavorite": false,
+    "discount": "15",
+    "star": 5,
+    "id": "5"
+   },
+   {
+    "createdAt": "2021-07-07T01:35:47.501Z",
+    "name": "Awesome Plastic Car",
+    "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "sizes": [],
+    "price": "845.00",
+    "sales_quantity": 43,
+    "image": "https://images.unsplash.com/photo-1554568218-0f1715e72254?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "isFavorite": false,
+    "id": "6"
+   },
+   {
+    "createdAt": "2021-07-07T00:04:29.611Z",
+    "name": "Handcrafted Plastic Mouse",
+    "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "sizes": [],
+    "price": "454.00",
+    "sales_quantity": 87,
+    "image": "https://images.unsplash.com/photo-1605882008785-56f0cb47482c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+    "isFavorite": false,
+    "discount": "15",
+    "star": 5,
+    "id": "7"
+   },
+   {
+    "createdAt": "2021-07-07T06:13:15.897Z",
+    "name": "Generic Granite Chips",
+    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+    "sizes": [],
+    "price": "986.00",
+    "sales_quantity": 58,
+    "image": "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "isFavorite": false,
+    "discount": "15",
+    "star": 5,
+    "id": "8"
+   },
+   {
+    "createdAt": "2021-07-07T01:59:06.062Z",
+    "name": "Rustic Metal Bike",
+    "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "sizes": [
+     "P",
+     "M",
+     "G"
+    ],
+    "color": "White",
+    "price": "385.00",
+    "sales_quantity": "20",
+    "image": "https://images.unsplash.com/photo-1579328064848-53fe6c665058?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+    "isFavorite": false,
+    "id": "9"
+   },
+   {
+    "createdAt": "2021-07-07T18:18:53.959Z",
+    "name": "Awesome Frozen Table",
+    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "sizes": [],
+    "price": "564.00",
+    "sales_quantity": 48,
+    "image": "https://images.unsplash.com/photo-1509695507497-903c140c43b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80",
+    "isFavorite": false,
+    "discount": "15",
+    "star": 5,
+    "id": "10"
+   }
+  ]
