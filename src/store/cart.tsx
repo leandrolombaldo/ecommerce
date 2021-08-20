@@ -24,6 +24,10 @@ interface PropsProducts {
   id: number;
   quantity: number;
   price: number;
+  image: string;
+  name: string;
+  color: string;
+
 }
 
 const CounterContext = createContext<InitialState>(cartInitialState);
