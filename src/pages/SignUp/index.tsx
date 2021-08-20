@@ -1,73 +1,70 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import {useCallback, useRef} from 'react';
+import { Container, Content, Background } from "./styles";
+import { FiArrowLeft,FiLogIn, FiMail, FiUser ,FiLock } from "react-icons/fi";
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
+import * as Yup from 'yup';
 
-import { LoginTotal, Img, Form } from "./styles";
+import getValidationErrors from '../../utils/getValidationErrors';
 
-import backLogin from "../../assets/backgroundLogin.svg";
+import logoImg from "../../assets/logo.svg";
 
-import Navtop from "../../components/Navbar";
-import Footer from "../../components/NavFooter";
-
-interface SignUpData {
-  username: string;
-  email: string;
-  password: string;
-}
-
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 function SignUp() {
-  const [signup, setSignup] = useState<SignUpData>({username: '', email: '', password: ''});
+  const formRef = useRef<FormHandles>(null);
 
-  const handleSignup = (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(async (data: object) => {
+    try {
+      formRef.current?.setErrors({});
+      
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório'),
+        email: Yup.string().required('E-mail obrigatório').email('Digite um e-mail válido'),
+        password: Yup.string().min(6, 'No mínimo 6 dígitos'),
+      })
 
-    console.log(signup)
-    
-  };
+      await schema.validate(data, {
+        abortEarly: false,
+      });
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = event?.target;
+    } catch (err) {
+      console.log(err);
 
-    setSignup({...signup, [name]:value})
-  };
+      const errors = getValidationErrors(err);
+      
+
+      formRef.current?.setErrors(errors);
+    }
+  }, []);
+
+  
 
   return (
-    <>
-      <Navtop />
-      <LoginTotal>
-        <Img>
-          <img src={backLogin} alt="img login" />
-        </Img>
-        <Form onSubmit={handleSignup}>
-          <h2>Sign Up</h2>
-          <label>Username</label>
-          <input
-            type="text"
-            required
-            name="username"
-            value={signup?.username}
-            onChange={handleChange}
-          />
-          <label>Email</label>
-          <input
-            required
-            type="email"
-            name="email"
-            value={signup?.email}
-            onChange={handleChange}
-          />
-          <label>Password</label>
-          <input
-            required
-            type="text"
-            name="password"
-            value={signup?.password}
-            onChange={handleChange}
-          />
-          <button onClick={handleSignup}>Sign Up</button>
+    <Container>      
+      <Background />
+
+      <Content>
+        <img src={logoImg} alt="Store Carolina's" />
+
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <h1>Faça seu Cadastro</h1>
+
+          <Input name="name" icon={FiUser} placeholder="Nome" />
+          <Input name="email" icon={FiMail} placeholder="E-mail" />
+          <Input name="password" icon={FiLock} type="password" placeholder="Password" />
+
+          <Button type="submit">Cadastrar</Button>
+
         </Form>
-      </LoginTotal>
-      <Footer />
-    </>
+        <a href="/signIn">
+          <FiArrowLeft />
+          Voltar para logon
+        </a>
+      </Content>
+
+    </Container>
   );
 }
 

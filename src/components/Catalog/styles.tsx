@@ -71,7 +71,7 @@ export const PromoItem = styled.div`
     .buy {
       margin-top: 2rem;
       padding: 1rem 2rem;
-      background-color: orange;
+      background-color: #ff9000;
       color: #fff;
       border: 1px solid #fff;
     }

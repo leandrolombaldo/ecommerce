@@ -38,7 +38,7 @@ const Routes = () => (
       <Route path="/signin" exact component={SignIn} />
       <Route path="/signUp" exact component={SignUp} />
       <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
-      <PrivateRoute path="/checkout" exact component={CheckOut} />
+      <Route path="/checkout" exact component={CheckOut} />
       <PrivateRoute path="/favorite" exact component={Favorite} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>

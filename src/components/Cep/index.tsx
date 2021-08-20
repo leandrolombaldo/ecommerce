@@ -3,24 +3,35 @@ import { useState, FormEvent } from "react";
 import apiCep from "../../config/apiCep";
 
 import { Form, Inputs } from "./styles";
+import Input from "../../components/Input";
+
+interface InitialProps {
+  cep: string;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  gia: string;
+}
+
+
 
 function Cep() {
   const [inputValue, setInputValue] = useState("");
-  const [shippingAddress, setShippingAddress] = useState({
-    cep: "",
-    logradouro: "",
-    complemento: "",
-    bairro: "",
-    localidade: "",
-    uf: "",
-    gia: "",
+  const [shippingAddress, setShippingAddress] = useState<InitialProps>({
+    cep: '',
+    logradouro: '',
+    complemento: '',
+    bairro: '',
+    localidade: '',
+    uf: '',
+    gia: '',
   });
 
+
   const handleSaveAddress = () => {
-    localStorage.setItem(
-      "@shippingAddress",
-      JSON.stringify(shippingAddress)
-    );
+    localStorage.setItem("@shippingAddress", JSON.stringify(shippingAddress));
   };
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -47,7 +58,7 @@ function Cep() {
         />
       </Form>
       <Inputs>
-        <input
+        <Input
           className="logradouro"
           required
           type="text"
@@ -57,7 +68,7 @@ function Cep() {
           onChange={({ target }) => {
             setShippingAddress({
               ...shippingAddress,
-              logradouro: target.value
+              logradouro: target.value,
             });
           }}
           maxLength={15}

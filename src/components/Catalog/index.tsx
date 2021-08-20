@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { FaStar, FaRegHeart, FaHeart } from "react-icons/fa";

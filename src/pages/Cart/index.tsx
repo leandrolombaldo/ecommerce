@@ -7,7 +7,6 @@ import Footer from "../../components/NavFooter";
 import {
   Container,
   MyCart,
-  Address,
   YourOrder,
   DetailsProducts,
   Total,
@@ -59,7 +58,7 @@ const Cart = () => {
           <DetailsProducts>
             <div className="order">
               <span>Order</span>
-              <strong>${total(cart).toFixed(2)}</strong>
+              <strong>${total(cart)}</strong>
             </div>
             <div className="delivery">
               <span>Delivery</span>

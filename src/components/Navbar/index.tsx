@@ -14,7 +14,7 @@ const Navtop = () => {
   return (
     <Container>
       <Navbar  className="navbar" expand="lg" >
-        <Navbar.Brand>
+        <Navbar.Brand style={{cursor:'pointer'}}>
           <img
             src={Logo}
             alt="logo Carolina's store"
