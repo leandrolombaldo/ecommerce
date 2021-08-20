@@ -31,7 +31,7 @@ export const Container = styled.div`
       button {
         
         padding: 36px 64px 36px;
-        background: orange;
+        background: #ff9000;
         border: 1px solid #ececec;
         color: #fff;
       }
