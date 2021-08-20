@@ -96,7 +96,8 @@ export const Mid = styled.div`
 export const Button = styled.button`
   width: 100%;
   text-align: center;
-  background: #00ae7c;
+  background: orange;
+  border: transparent;
   font-family: Lato, sans-serif;
   color: #fff;
   letter-spacing: 1.5px;
