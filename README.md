@@ -13,6 +13,7 @@ This project was developed using cutting edge front-end technologies.
 
 
 - [ReactJS](https://reactjs.org/)
+- [Context-api](https://pt-br.reactjs.org/docs/context.html)
 - [Typescript](https://www.typescriptlang.org/)
 - [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Styled Components](https://styled-components.com/)
