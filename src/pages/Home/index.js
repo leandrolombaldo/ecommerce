@@ -21,8 +21,6 @@ import {
   TextParag,
   Container,
   ProductBlog,
-  ProductBlog1,
-  ProductBlog2,
   FinalProduct,
 } from "./styles.js";
 
@@ -35,7 +33,7 @@ function Home() {
     <>
       <NavbarHome>
         <Navbar className="navbar" expand="lg">
-          <Navbar.Brand style={{cursor: "pointer"}}>
+          <Navbar.Brand style={{ cursor: "pointer" }}>
             <img
               src={Logo}
               alt="logo Carolina's store"
@@ -100,29 +98,29 @@ function Home() {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-          <button type="button">See More</button>
+          <a href="#">See More</a>
           <FinalProduct />
         </ProductBlog>
-        <ProductBlog1>
+        <ProductBlog>
           <img src={product2} alt="Argan Oil" />
           <h5>Argan Oil Miolo Comestic</h5>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-          <button type="button">See More</button>
+          <a href="#">See More</a>
           <FinalProduct />
-        </ProductBlog1>
-        <ProductBlog2>
+        </ProductBlog>
+        <ProductBlog>
           <img src={product3} alt="Tree sap" />
           <h5>Tree Sap Ointment Miolo Comestic</h5>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-          <button type="button">See More</button>
+          <a href="#">See More</a>
           <FinalProduct />
-        </ProductBlog2>
+        </ProductBlog>
       </Container>
       <Footer />
     </>
