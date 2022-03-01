@@ -17,6 +17,7 @@ export const NavbarHome = styled.div`
 export const TextTitle = styled.div`
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 8rem;
 
   color: #110102;
@@ -31,6 +32,7 @@ export const TextParag = styled.p`
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 8rem;
+  text-align: center;
 `;
 
 export const Container = styled.div`
@@ -81,4 +83,11 @@ export const ProductBlog = styled.div`
 export const FinalProduct = styled.div`
   background: #f1f1fe;
   height: 5px;
+`;
+
+export const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;

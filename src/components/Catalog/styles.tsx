@@ -53,6 +53,10 @@ export const PromoItem = styled.div`
     position: relative;
     padding: 1.5rem;
 
+    .icon {
+      cursor: pointer;
+    }
+
     h3 {
       font-family: "Rubik", sans-serif;
       font-weight: 600;

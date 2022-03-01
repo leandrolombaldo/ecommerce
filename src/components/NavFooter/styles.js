@@ -15,13 +15,11 @@ export const Container = styled.div`
 
 export const Iconcolor = styled.div`
     width: 100%;
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1vw ));
-    grid-auto-rows: minmax(8rem, auto);
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
-
+    gap: 40px;
+    margin: 0 0 24px;
 `;
 
 export const Social = styled.p`
@@ -51,7 +49,7 @@ export const Col = styled.div`
 export const H6 = styled.h6`
     font-family: 'Rubik', sans-serif;
     font-weight: 600;
-    margin: 0 1.8rem 2rem;
+    
     Color: #363636;
 `;
 
@@ -73,7 +71,7 @@ export const Button = styled.button`
     /* padding: 0.75rem 2rem; */
 
     &:hover {
-        background: red;
+        background: #110102CC;
     }
 
 `;
