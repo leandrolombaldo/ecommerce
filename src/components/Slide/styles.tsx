@@ -4,16 +4,17 @@ import Banner from "../../assets/banner.jpg";
 
 export const Container = styled.div`
       width: 100%;
-      height: 720px;
+      height: auto;
 
       display: flex;
       align-items: center;
       justify-content: flex-end;
          
       background-image: ${`url(${Banner})`};
+      background-size: cover;
 
       section {
-        margin-right: 128px;
+        margin: 128px 128px 128px 0;
       }
 
       h4 {        

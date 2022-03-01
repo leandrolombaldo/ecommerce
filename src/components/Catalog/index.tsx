@@ -102,9 +102,9 @@ export function Catalog() {
           <img src={product.image} alt={`${product.name}`} />
           <div className="profile">
             {checkIfIsFavorite(product.id) ? (
-              <FaHeart onClick={() => handleFavorite(product.id)} color="red" />
+              <FaHeart onClick={() => handleFavorite(product.id)} color="red" className="icon" />
             ) : (
-              <FaRegHeart onClick={() => handleFavorite(product.id)} />
+              <FaRegHeart onClick={() => handleFavorite(product.id)}  className="icon"/>
             )}
 
             <h3>{product.name}</h3>

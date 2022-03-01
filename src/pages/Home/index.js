@@ -4,6 +4,7 @@ import Slide from "../../components/Slide";
 import Mosaic from "../../components/Mosaic";
 import { Catalog, PrimaryCatalog } from "../../components/Catalog";
 import Footer from "../../components/NavFooter";
+import Swiper from "../../components/Swiper";
 import { useCart } from "../../hooks/useCart";
 
 import { Navbar, Nav } from "react-bootstrap";
@@ -22,6 +23,7 @@ import {
   Container,
   ProductBlog,
   FinalProduct,
+  Main
 } from "./styles.js";
 
 
@@ -68,27 +70,30 @@ function Home() {
       </NavbarHome>
       <Slide />
       <Catalog />
-      <TextTitle>
-        Best Seller
-        <br />
-        &nbsp; Product
-      </TextTitle>
-      <TextParag>
-        Capture more customers with a great brand recall. Whether
-        <br /> you need a catchy slogan for advertising.
-      </TextParag>
+      <Main>
+        <TextTitle>
+          Best Seller
+          <br />
+          Product
+        </TextTitle>
+
+        <TextParag>
+          Capture more customers with a great brand recall. Whether
+          you need a catchy slogan for advertising.
+        </TextParag>
+      </Main>
       <PrimaryCatalog />
+      <Swiper />
       <TextTitle>Gallary</TextTitle>
       <TextParag>
         Capture more customers with a great brand
-        <br />
         reacall. Whether you need a catchy
       </TextParag>
       <Mosaic />
       <TextTitle>Our Blogs</TextTitle>
       <TextParag>
         Capture more customers with a great brand recall. Whether
-        <br /> you need a catchy slogan for advertising.
+        you need a catchy slogan for advertising.
       </TextParag>
       <Container>
         <ProductBlog>
