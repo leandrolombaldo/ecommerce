@@ -66,18 +66,23 @@ export const Ul = styled.ul`
 
 
 export const Button = styled.button`
+    width: 27%;
     color: #fff;
-    padding:0.5rem;
+    border: none;
     background: #110102;
-    padding: 0.75rem 2rem;
-    justify-items: center;
+    /* padding: 0.75rem 2rem; */
+
+    &:hover {
+        background: red;
+    }
 
 `;
 
-export const Form = styled.form`
-
+export const Form = styled.form`    
+    display: flex;
+    height: 50px;
 
     input {
-        padding: 0.5rem; 
+        padding: 0 0 0 16px;
     }
 `;
