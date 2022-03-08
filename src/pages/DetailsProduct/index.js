@@ -28,14 +28,18 @@ import {
   ButtonDes,
   Empty,
   Color,
+  BoxCep,
+  PriceShipping
 } from "./styles";
 
 function DetailsProduct() {
-  
+
   const { id } = useParams();
   // const product = data.find((item) => item.id === Number(id));
 
   const [product, setProduct] = useState([]);
+  const [shipping, setShipping] = useState(null);
+  const [shippingOne, setShippingOne] = useState('');
 
   useEffect(() => {
     api.get(`/Products/${id}`).then((response) => {
@@ -45,7 +49,19 @@ function DetailsProduct() {
 
   const { addToCart } = useCart();
 
-  function handleFavorite() {
+  const handleCepShipping = () => {
+    // pega somente 3 ultimos numero digitados
+    const calcShipping = shipping % 1000;
+
+    if (calcShipping < 99) {
+      setShippingOne('ZipCode Incorret')
+    } else if(calcShipping > 100 && calcShipping <= 400) {
+      setShippingOne('Shipping $25.00')
+    } else if (calcShipping > 401 && calcShipping <= 700) {
+      setShippingOne('Shipping $35.00')
+    } else if (calcShipping > 701 && calcShipping <= 999) {
+      setShippingOne('Shipping $45.00')
+    }
     
   }
 
@@ -63,7 +79,7 @@ function DetailsProduct() {
           <Top>
             <h3>{product.name}</h3>
             <span>
-              <FaRegHeart onClick={handleFavorite}/>
+              <FaRegHeart />
             </span>
           </Top>
           <hr />
@@ -104,8 +120,13 @@ function DetailsProduct() {
           <Obs>Check if the product is available in the cart.</Obs>
           <hr />
           <p>SIMULATE SHIPPING</p>
-          <Input placeholder="Enter your ZIPCODE" type="tel" />
-          <ButtonCep type="button">OK</ButtonCep>
+          <BoxCep>
+            <Input placeholder="Enter your ZIPCODE" type="tel" onChange={(e) => setShipping(e.target.value)}/>
+            <ButtonCep type="button" onClick={handleCepShipping}>OK</ButtonCep>
+          </BoxCep>
+          <PriceShipping>
+            {shippingOne}
+          </PriceShipping>
           <NotCep>
             <Link
               style={{ color: "#000" }}

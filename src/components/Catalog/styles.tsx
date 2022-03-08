@@ -19,7 +19,16 @@ export const Container1 = styled.div`
     color: #110102;
   }
 
+  @media  (max-width: 1300px) {
+    max-width: 70%;
+  }
+
+  @media  (max-width: 900px) {
+    max-width: 85%;
+  }
+
   @media screen and (max-width: 768px) {
+    max-width: 55%;
     grid-template-areas:
       "promo1"
       "promo2"
@@ -103,6 +112,10 @@ export const PrimaryCata = styled.div`
   justify-content: center;
   grid-gap: 50px;
   position: relative;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  }
 `;
 
 export const Container = styled.div`
