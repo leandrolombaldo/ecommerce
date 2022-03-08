@@ -4,7 +4,7 @@ export const Container = styled.div`
   max-width: 50%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-auto-rows: minmax(20rem, auto);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
@@ -96,30 +96,45 @@ export const Mid = styled.div`
 export const Button = styled.button`
   width: 100%;
   text-align: center;
-  background: orange;
+  background-color: #ffa500;
   border: transparent;
   font-family: Lato, sans-serif;
   color: #fff;
   letter-spacing: 1.5px;
   padding: 15px;
   font-size: 14px;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: #ffa500CC;
+  }
 `;
 
 export const Button1 = styled.button`
   margin-top: 1rem;
   width: 100%;
   text-align: center;
-  background: #fff;
+  background-color: #fff;
   font-family: Lato;
   color: #000;
   letter-spacing: 1.5px;
   padding: 15px;
   font-size: 14px;
   border: 1px solid #000;
+  transition: background-color .3s ease-in-out;
 
   span {
     color: red;
   }
+
+  &:hover {
+    background-color: rgb(3, 201, 169, 1); 
+  }
+`;
+
+export const BoxCep = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Obs = styled.p`
@@ -143,6 +158,14 @@ export const ButtonCep = styled.button`
   color: #fff;
   padding: 10px 30px 8px;
   margin-left: 10px;
+`;
+
+export const PriceShipping = styled.p`
+  margin-top: 5px;
+  font-size: 13px;
+  border-bottom: 1px solid;
+  width: fit-content;
+  color: #ff4c30;
 `;
 
 export const NotCep = styled.div`

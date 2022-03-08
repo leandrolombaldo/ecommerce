@@ -33,15 +33,20 @@ export const TextParag = styled.p`
   font-size: 1.2rem;
   margin-bottom: 8rem;
   text-align: center;
+  padding: 0 45px;
 `;
 
 export const Container = styled.div`
   width: 55%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    grid-auto-rows: minmax(30rem,auto);
-    grid-column-gap: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-auto-rows: minmax(30rem,auto);
+  grid-column-gap: 30px;
+  
+  @media (min-width:1024px) {
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  }
 
   h5 {
     font-family: "Rubik", sans-serif;
