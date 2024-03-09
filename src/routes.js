@@ -1,5 +1,5 @@
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,38 +11,28 @@ import DetailsProduct from './pages/DetailsProduct';
 import Favorite from './pages/Favorite';
 
 import { isAuthenticated } from "./services/auth";
-  
 
+const PrivateRoute = ({ children, ...rest }) => {
+  let navigate = useNavigate();
+  return (
+    isAuthenticated() ? children : navigate('/signin')
+  );
+};
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      isAuthenticated() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to={{ pathname: "/signin", state: { from: props.location } }} />
-      )
-    }
-  />
+const AppRoutes = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signUp" element={<SignUp />} />
+      <Route path="/detailsproduct/:id" element={<DetailsProduct />} />
+      <Route path="/checkout" element={<CheckOut />} />
+      <Route path="/favorite" element={<PrivateRoute><Favorite /></PrivateRoute>} />
+      <Route path="*" element={<h1>Page not found</h1>} />
+    </Routes>
+  </Router>
 );
 
-
-
-const Routes = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/about" exact component={About} />
-      <Route path="/cart" exact component={Cart} />
-      <Route path="/signin" exact component={SignIn} />
-      <Route path="/signUp" exact component={SignUp} />
-      <Route path="/detailsproduct/:id" exact component={DetailsProduct} />
-      <Route path="/checkout" exact component={CheckOut} />
-      <PrivateRoute path="/favorite" exact component={Favorite} />
-      <Route path="*" component={() => <h1>Page not found</h1>} />
-    </Switch>
-  </BrowserRouter>
-);
-
-export default Routes;
+export default AppRoutes;

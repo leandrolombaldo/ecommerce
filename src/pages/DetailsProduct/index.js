@@ -42,7 +42,7 @@ function DetailsProduct() {
   const [shippingOne, setShippingOne] = useState('');
 
   useEffect(() => {
-    api.get(`/Products/${id}`).then((response) => {
+    api.get(`/products/${id}`).then((response) => {
       setProduct(response.data);
     });
   }, [id]);
