@@ -1,4 +1,4 @@
-import { useHistory } from "react-router";
+import { NavLink } from "react-router-dom";
 
 import Slide from "../../components/Slide";
 import Mosaic from "../../components/Mosaic";
@@ -28,7 +28,6 @@ import {
 
 
 function Home() {
-  const history = useHistory();
   const { cart } = useCart();
 
   return (
@@ -39,7 +38,7 @@ function Home() {
             <img
               src={Logo}
               alt="logo Carolina's store"
-              onClick={() => history.push("/")}
+              onClick={() => navigate("/")}
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -48,22 +47,22 @@ function Home() {
               className="mr-auto"
               style={{ fontFamily: "Raleway", fontSize: "20px" }}
             >
-              <Nav.Link onClick={() => history.push("/")}>Home</Nav.Link>
-              <Nav.Link onClick={() => history.push("/about")}>About</Nav.Link>
-              <Nav.Link href="#Em-Construção">Shop</Nav.Link>
-              <Nav.Link href="#Em-Construção">Contact US</Nav.Link>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About</NavLink>
+              {/* <NavLink href="#Em-Construção">Shop</NavLink>
+              <NavLink href="#Em-Construção">Contact US</NavLink> */}
             </Nav>
             <Nav
               className="justify-content-end"
               style={{ fontFamily: "Raleway", fontSize: "20px" }}
             >
-              <Nav.Link onClick={() => history.push("/cart")}>
+              <NavLink to="/cart">
                 <FaShoppingBag color="#000" />
                 {cart.reduce((acc, item) => acc + item.quantity, 0)}
-              </Nav.Link>
-              <Nav.Link onClick={() => history.push("/signin")}>
+              </NavLink>
+              <NavLink to="/signin">
                 <FaRegUser color="#000" />
-              </Nav.Link>
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
