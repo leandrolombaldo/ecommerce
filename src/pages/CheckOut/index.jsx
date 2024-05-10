@@ -1,34 +1,18 @@
-import Navtop from "../../components/Navbar";
+import { Navbar } from "../../components/Navbar";
 import Footer from "../../components/NavFooter";
 
 import { useCart } from "../../hooks/useCart";
 import Cep from "../../components/Cep";
 
+import { Container, Login, Address, Payment, H5, YourOrder, ProductList, DetailsProducts, Total } from "./styles";
 
-import {
-  Container,
-  Login,
-  Address,
-  Payment,
-  H5,
-  YourOrder,
-  ProductList,
-  DetailsProducts,
-  Total,
-} from "./styles";
-
-import {
-  FaUserCheck,
-  FaCheck,
-  FaRegAddressBook,
-  FaCreditCard,
-} from "react-icons/fa";
+import { FaUserCheck, FaCheck, FaRegAddressBook, FaCreditCard } from "react-icons/fa";
 
 import { RiBankLine } from "react-icons/ri";
 import { Accordion, Card, Button, Form, Col } from "react-bootstrap";
 
 const Checkout = () => {
-  const { cart,  total } = useCart();
+  const { cart, total } = useCart();
 
   const Boleto = () => {
     alert("Boleto sent to email");
@@ -36,7 +20,7 @@ const Checkout = () => {
 
   return (
     <>
-      <Navtop />
+      <Navbar />
       <Container>
         <h2>Checkout</h2>
         <Login>
@@ -54,21 +38,21 @@ const Checkout = () => {
           </div>
         </Login>
         <Address>
-        <Accordion defaultActiveKey="0">
-          <Card>
-          <Card.Header className="colorNamesMethodPayment">
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                <FaRegAddressBook color="#000" size="30"/>
-              </Accordion.Toggle>
-              Address
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <label>SHIPPING ADDRESS</label>
-                <Cep />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          <Accordion defaultActiveKey="0">
+            <Card>
+              <Card.Header className="colorNamesMethodPayment">
+                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <FaRegAddressBook color="#000" size="30" />
+                </Accordion.Toggle>
+                Address
+              </Card.Header>
+              <Accordion.Collapse eventKey="0">
+                <Card.Body>
+                  <label>SHIPPING ADDRESS</label>
+                  <Cep />
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
           </Accordion>
         </Address>
 
@@ -87,10 +71,7 @@ const Checkout = () => {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label>Enter Card Number</Form.Label>
-                      <Form.Control
-                        type="tel"
-                        placeholder="0000 0000 0000 0000"
-                      />
+                      <Form.Control type="tel" placeholder="0000 0000 0000 0000" />
                     </Form.Group>
                   </Form.Row>
                   <Form.Row>
@@ -112,10 +93,7 @@ const Checkout = () => {
                   <Button variant="dark" type="submit">
                     Pay ${total(cart).toFixed(2)}
                   </Button>
-                  <p>
-                    Your card details would be securely saved for faster
-                    payments. Your CVV will not be stored
-                  </p>
+                  <p>Your card details would be securely saved for faster payments. Your CVV will not be stored</p>
                 </Card.Body>
               </Accordion.Collapse>
             </Card>

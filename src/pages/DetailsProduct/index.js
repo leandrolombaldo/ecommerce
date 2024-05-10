@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import Navtop from "../../components/Navbar";
+import { Navbar } from "../../components/Navbar";
 import Footer from "../../components/NavFooter";
 
 import { FaRegStar, FaRegHeart, FaHeart } from "react-icons/fa";
@@ -29,17 +29,16 @@ import {
   Empty,
   Color,
   BoxCep,
-  PriceShipping
+  PriceShipping,
 } from "./styles";
 
 function DetailsProduct() {
-
   const { id } = useParams();
   // const product = data.find((item) => item.id === Number(id));
 
   const [product, setProduct] = useState([]);
   const [shipping, setShipping] = useState(null);
-  const [shippingOne, setShippingOne] = useState('');
+  const [shippingOne, setShippingOne] = useState("");
 
   useEffect(() => {
     api.get(`/products/${id}`).then((response) => {
@@ -54,20 +53,19 @@ function DetailsProduct() {
     const calcShipping = shipping % 1000;
 
     if (calcShipping < 99) {
-      setShippingOne('ZipCode Incorret')
-    } else if(calcShipping > 100 && calcShipping <= 400) {
-      setShippingOne('Shipping $25.00')
+      setShippingOne("ZipCode Incorret");
+    } else if (calcShipping > 100 && calcShipping <= 400) {
+      setShippingOne("Shipping $25.00");
     } else if (calcShipping > 401 && calcShipping <= 700) {
-      setShippingOne('Shipping $35.00')
+      setShippingOne("Shipping $35.00");
     } else if (calcShipping > 701 && calcShipping <= 999) {
-      setShippingOne('Shipping $45.00')
+      setShippingOne("Shipping $45.00");
     }
-    
-  }
+  };
 
   return (
     <>
-      <Navtop />
+      <Navbar />
       <Container className="container">
         <Img key={product.id}>
           <img src={product.image} alt="" />
@@ -91,7 +89,8 @@ function DetailsProduct() {
               <FaRegStar />
               <FaRegStar />
               <FaRegStar />
-            </span>(0) <span>Rating</span>
+            </span>
+            (0) <span>Rating</span>
           </p>
           <Mid>
             <h4>$ {product.price}</h4>
@@ -121,28 +120,24 @@ function DetailsProduct() {
           <hr />
           <p>SIMULATE SHIPPING</p>
           <BoxCep>
-            <Input placeholder="Enter your ZIPCODE" type="tel" onChange={(e) => setShipping(e.target.value)}/>
-            <ButtonCep type="button" onClick={handleCepShipping}>OK</ButtonCep>
+            <Input placeholder="Enter your ZIPCODE" type="tel" onChange={(e) => setShipping(e.target.value)} />
+            <ButtonCep type="button" onClick={handleCepShipping}>
+              OK
+            </ButtonCep>
           </BoxCep>
-          <PriceShipping>
-            {shippingOne}
-          </PriceShipping>
+          <PriceShipping>{shippingOne}</PriceShipping>
           <NotCep>
             <Link
               style={{ color: "#000" }}
               to={{
-                pathname:
-                  "http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm",
+                pathname: "http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm",
               }}
               target="_blank"
             >
               I don't know my ZIPCODE
             </Link>
           </NotCep>
-          <Info>
-            Prices, terms and types of delivery are valid only for this product
-            under consultation.
-          </Info>
+          <Info>Prices, terms and types of delivery are valid only for this product under consultation.</Info>
         </Div>
       </Container>
 
@@ -156,10 +151,7 @@ function DetailsProduct() {
           <p>
             <strong>EASY EXCHANGE</strong>
           </p>
-          <p>
-            It is simple and practical to exchange your products through the
-            website or APP.
-          </p>
+          <p>It is simple and practical to exchange your products through the website or APP.</p>
           <NotCep>
             <Link style={{ color: "#000" }}>I want to know how to change</Link>
           </NotCep>

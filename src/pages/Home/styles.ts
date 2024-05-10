@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const NavbarHome = styled.div`
-    
-  .navbar {
-    width: 100%;
-    position: absolute;
-    background: transparent;
-
-    @media screen and (max-width: 768px) {
-      position: relative;
-      background: #ac7c83;
-    }
-  }
-`;
-
 export const TextTitle = styled.div`
   display: flex;
   justify-content: center;
@@ -40,12 +26,12 @@ export const Container = styled.div`
   width: 55%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  grid-auto-rows: minmax(30rem,auto);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(30rem, auto);
   grid-column-gap: 30px;
-  
-  @media (min-width:1024px) {
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   h5 {
