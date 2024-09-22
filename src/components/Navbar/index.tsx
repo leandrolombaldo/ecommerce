@@ -1,9 +1,7 @@
-import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { FaShoppingBag, FaRegUser } from "react-icons/fa";
 import * as S from "./styles";
 import { useCart } from "../../hooks/useCart";
-import { Link } from "react-router-dom";
 
 type NavbarProps = {
   home?: boolean;

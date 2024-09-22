@@ -6,6 +6,7 @@ import { Container1, PromoItem, PrimaryCata, Container } from "./styles";
 
 import api from "../../config/api";
 import { useProducts } from "../../hooks/useProducts";
+import  db  from "../../services/db";
 
 interface ProductData {
   id: number;
@@ -22,10 +23,23 @@ interface ProductData {
 }
 
 export function Catalog() {
+  const navigate = useNavigate();
   const limit = 3;
 
   const { data, isLoading } = useProducts(limit);
-  const navigate = useNavigate();
+
+useEffect(() => {
+  const AllProducts = async () => {
+    const response = await db.product.findMany({
+      select: {
+        name: true,
+      },
+    });
+    console.log(response);
+  }
+  AllProducts();
+}, []);
+  
   // const [favorites, setFavorites] = useState<ProductData[]>([]);
 
   // async function handleFavorite(id: number) {
